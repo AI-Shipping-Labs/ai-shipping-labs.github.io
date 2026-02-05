@@ -1,25 +1,25 @@
-import { Zap, Target, Users, Brain } from "lucide-react"
+import { Hammer, Rocket, Users, Brain } from "lucide-react"
 
 const features = [
   {
-    icon: Zap,
-    title: "Signal, not noise",
-    description: "Opinionated briefs on tools and practices. Filtered through real-world experience, not hype cycles.",
+    icon: Hammer,
+    title: "Learning by doing",
+    description: "No passive consumption. Every activity is designed around building, shipping, and getting feedback on real work.",
   },
   {
-    icon: Target,
-    title: "Calibration over content",
-    description: "Feedback on positioning, decisions, and work-in-progress. Learn through shared reasoning.",
+    icon: Rocket,
+    title: "Production-ready",
+    description: "Focus on what actually works in production. Move from prototypes to reliable systems with battle-tested patterns.",
   },
   {
     icon: Users,
-    title: "Practitioners only",
-    description: "Engineers, data scientists, and AI builders who are actively shipping. No lurkers, no tourists.",
+    title: "Build together",
+    description: "Work alongside other practitioners. Hackathons, projects, and group problem-solving—not isolated learning.",
   },
   {
     icon: Brain,
-    title: "Judgment over frameworks",
-    description: "Develop better instincts for technical decisions. Context matters more than best practices.",
+    title: "Calibrate your judgment",
+    description: "Develop better instincts through exposure to Alexey's reasoning process and peer feedback on real decisions.",
   },
 ]
 
@@ -28,13 +28,13 @@ export function About() {
     <section id="about" className="border-t border-border bg-background py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <p className="text-sm font-medium uppercase tracking-widest text-accent">Why this community</p>
+          <p className="text-sm font-medium uppercase tracking-widest text-accent">Philosophy</p>
           <h2 className="mt-4 text-balance text-3xl font-semibold tracking-tight sm:text-4xl">
-            Built for builders who want more than content
+            Learn by building, together
           </h2>
           <p className="mt-6 text-pretty text-lg leading-relaxed text-muted-foreground">
-            Most communities optimize for engagement. This one optimizes for calibration—helping you make 
-            better technical decisions by exposing you to Alexey's judgment and reasoning process.
+            This community is built on a simple belief: the best way to learn is by doing real work, 
+            getting feedback, and building alongside others who are shipping production systems.
           </p>
         </div>
         

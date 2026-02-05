@@ -5,8 +5,8 @@ import { Header } from "@/components/landing/header"
 import { Footer } from "@/components/landing/footer"
 
 export const metadata = {
-  title: "About Alexey | The Signal",
-  description: "Meet Alexey Grigorev - Software engineer and ML practitioner with 15+ years of experience. Founder of DataTalks.Club and creator of the Zoomcamp series.",
+  title: "About Alexey Grigorev | AI Engineering Lab",
+  description: "Meet Alexey Grigorev Grigorev - Software engineer and ML practitioner with 15+ years of experience. Founder of DataTalks.Club and creator of the Zoomcamp series.",
 }
 
 const highlights = [
@@ -45,12 +45,12 @@ const links = [
   },
   {
     label: "AI Engineering Buildcamp",
-    href: "https://maven.com/alexey-grigorev/from-rag-to-agents",
+    href: "https://maven.com/Alexey Grigorev-grigorev/from-rag-to-agents",
     description: "From RAG to Agents course",
   },
   {
     label: "CV & Portfolio",
-    href: "https://alexeygrigorev.com/cv",
+    href: "https://Alexey Grigorevgrigorev.com/cv",
     description: "Full background and experience",
   },
 ]
@@ -59,11 +59,11 @@ export default function AboutPage() {
   return (
     <main className="min-h-screen">
       <Header />
-      
+
       <section className="px-6 pt-32 pb-16 lg:px-8 lg:pt-40 lg:pb-24">
         <div className="mx-auto max-w-4xl">
-          <Link 
-            href="/" 
+          <Link
+            href="/"
             className="inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground mb-8"
           >
             <ArrowLeft className="h-4 w-4" />
@@ -76,27 +76,27 @@ export default function AboutPage() {
                 <span className="text-6xl font-bold text-muted-foreground">AG</span>
               </div>
               <div className="mt-6 flex gap-3">
-                <a 
-                  href="https://youtube.com/@datatalksclub" 
-                  target="_blank" 
+                <a
+                  href="https://youtube.com/@datatalksclub"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="flex h-10 w-10 items-center justify-center rounded-lg bg-secondary text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
                   aria-label="YouTube"
                 >
                   <Youtube className="h-5 w-5" />
                 </a>
-                <a 
-                  href="https://linkedin.com/in/agrigorev" 
-                  target="_blank" 
+                <a
+                  href="https://linkedin.com/in/agrigorev"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="flex h-10 w-10 items-center justify-center rounded-lg bg-secondary text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
                   aria-label="LinkedIn"
                 >
                   <Linkedin className="h-5 w-5" />
                 </a>
-                <a 
-                  href="https://alexeyondata.substack.com" 
-                  target="_blank" 
+                <a
+                  href="https://Alexey Grigorevondata.substack.com"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="flex h-10 w-10 items-center justify-center rounded-lg bg-secondary text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
                   aria-label="Substack"
@@ -107,26 +107,26 @@ export default function AboutPage() {
             </div>
 
             <div className="flex-1">
-              <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">Alexey Grigorev</h1>
+              <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">Alexey Grigorev Grigorev</h1>
               <p className="mt-2 text-lg text-accent">Software Engineer & ML Practitioner</p>
-              
+
               <div className="mt-6 space-y-4 text-muted-foreground leading-relaxed">
                 <p>
-                  Software engineer and machine learning practitioner with 15 years of experience in software engineering 
+                  Software engineer and machine learning practitioner with 15 years of experience in software engineering
                   and 12+ years in machine learning.
                 </p>
                 <p>
-                  <strong className="text-foreground">Founder of DataTalks.Club</strong>, a community focused on practical data, ML, and AI engineering. 
+                  <strong className="text-foreground">Founder of DataTalks.Club</strong>, a community focused on practical data, ML, and AI engineering.
                   Through the Slack community and open programs, DataTalks.Club connects tens of thousands of practitioners worldwide.
                 </p>
                 <p>
-                  <strong className="text-foreground">Creator of the Zoomcamp series</strong> — free, code-first programs covering machine learning, 
-                  data engineering, MLOps, LLMs, and AI developer tools. These programs emphasize hands-on learning and 
+                  <strong className="text-foreground">Creator of the Zoomcamp series</strong> — free, code-first programs covering machine learning,
+                  data engineering, MLOps, LLMs, and AI developer tools. These programs emphasize hands-on learning and
                   real-world systems and have reached 100,000+ learners globally.
                 </p>
                 <p>
-                  My work centers on practical, production-grade ML and AI systems. I focus on how to move from early 
-                  prototypes to reliable systems in production, including problem formulation, data pipelines, modeling, 
+                  My work centers on practical, production-grade ML and AI systems. I focus on how to move from early
+                  prototypes to reliable systems in production, including problem formulation, data pipelines, modeling,
                   evaluation, deployment, and long-term operation.
                 </p>
               </div>
@@ -147,12 +147,12 @@ export default function AboutPage() {
             <h2 className="text-xl font-semibold">Background</h2>
             <div className="mt-6 space-y-4 text-muted-foreground leading-relaxed">
               <p>
-                Previously <strong className="text-foreground">Senior and Principal Data Scientist at OLX Group</strong>, 
-                where I led the development of a company-wide ML platform and worked with cross-functional ML and MLOps teams. 
+                Previously <strong className="text-foreground">Senior and Principal Data Scientist at OLX Group</strong>,
+                where I led the development of a company-wide ML platform and worked with cross-functional ML and MLOps teams.
                 Earlier roles included large-scale ML infrastructure, search, ads, and user modeling.
               </p>
               <p>
-                Author of technical books, including <strong className="text-foreground">Machine Learning Bookcamp</strong>. 
+                Author of technical books, including <strong className="text-foreground">Machine Learning Bookcamp</strong>.
                 Former Kaggle Master with top rankings in international competitions such as the NIPS'17 Criteo Challenge and WSDM Cup 2017.
               </p>
             </div>
@@ -189,10 +189,10 @@ export default function AboutPage() {
           </div>
 
           <div className="mt-16 rounded-2xl border border-accent/30 bg-accent/5 p-8 text-center">
-            <h2 className="text-xl font-semibold">Why The Signal?</h2>
+            <h2 className="text-xl font-semibold">Why AI Engineering Lab?</h2>
             <p className="mt-4 text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              After years of building communities and teaching at scale, I wanted to create something more focused. 
-              A smaller group where the conversations go deeper, where I can provide real feedback on your work, 
+              After years of building communities and teaching at scale, I wanted to create something more focused.
+              A smaller group where the conversations go deeper, where I can provide real feedback on your work,
               and where we can think through hard problems together. Not more content — better calibration.
             </p>
             <Button asChild size="lg" className="mt-8 bg-accent text-accent-foreground hover:bg-accent/90">

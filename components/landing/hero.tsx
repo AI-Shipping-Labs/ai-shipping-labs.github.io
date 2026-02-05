@@ -20,7 +20,7 @@ export function Hero() {
           
           <p className="mx-auto mt-8 max-w-2xl text-pretty text-lg leading-relaxed text-muted-foreground">
             A closed community for AI, data, and engineering practitioners who want signal over noise. 
-            Led by Alexey. Built for calibration, not content consumption.
+            Led by Alexey Grigorev. Built for calibration, not content consumption.
           </p>
           
           <div className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row">

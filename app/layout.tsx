@@ -4,18 +4,18 @@ import { Inter, JetBrains_Mono } from 'next/font/google'
 
 import './globals.css'
 
-const inter = Inter({ 
+const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
 })
 
-const jetbrainsMono = JetBrains_Mono({ 
+const jetbrainsMono = JetBrains_Mono({
   subsets: ['latin'],
   variable: '--font-mono',
 })
 
 export const metadata: Metadata = {
-  title: 'The Signal | A Technical Community by Alexey',
+  title: 'AI Engineering Lab | A Technical Community by Alexey Grigorev',
   description: 'An invite-oriented community for AI, data, and engineering practitioners. Signal over noise. Judgment over content.',
 }
 

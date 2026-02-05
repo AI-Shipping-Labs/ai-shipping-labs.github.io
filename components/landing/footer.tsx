@@ -23,7 +23,7 @@ export function Footer() {
           <div>
             <div className="flex items-center gap-2">
               <div className="h-6 w-6 rounded bg-accent" />
-              <span className="font-semibold">the signal</span>
+              <span className="font-semibold">AI Engineering Lab</span>
             </div>
             <p className="mt-4 text-sm text-muted-foreground">
               A technical community for AI, data, and engineering practitioners.
@@ -35,7 +35,7 @@ export function Footer() {
             <ul className="mt-4 space-y-3">
               <li>
                 <Link href="/about" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
-                  About Alexey
+                  About Alexey Grigorev
                 </Link>
               </li>
               <li>
@@ -60,7 +60,7 @@ export function Footer() {
             <h3 className="text-sm font-semibold text-foreground">Connect</h3>
             <ul className="mt-4 space-y-3">
               <li>
-                <a href="https://alexeyondata.substack.com" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
+                <a href="https://Alexey Grigorevondata.substack.com" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
                   Substack
                 </a>
               </li>
@@ -101,7 +101,7 @@ export function Footer() {
 
         <div className="mt-8 border-t border-border pt-8 text-center">
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} The Signal by Alexey. All rights reserved.
+            © {new Date().getFullYear()} AI Engineering Lab by Alexey Grigorev. All rights reserved.
           </p>
         </div>
       </div>

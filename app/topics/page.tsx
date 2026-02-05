@@ -5,8 +5,8 @@ import { Header } from "@/components/landing/header"
 import { Footer } from "@/components/landing/footer"
 
 export const metadata = {
-  title: "Topics & Content | The Signal",
-  description: "Explore the workshops, live streams, and projects covered in The Signal community. From AI agents to MLOps, production ML to deployment.",
+  title: "Topics & Content | AI Engineering Lab",
+  description: "Explore the workshops, live streams, and projects covered in AI Engineering Lab community. From AI agents to MLOps, production ML to deployment.",
 }
 
 const workshops = [
@@ -119,11 +119,11 @@ export default function TopicsPage() {
   return (
     <main className="min-h-screen">
       <Header />
-      
+
       <section className="px-6 pt-32 pb-16 lg:px-8 lg:pt-40 lg:pb-24">
         <div className="mx-auto max-w-5xl">
-          <Link 
-            href="/" 
+          <Link
+            href="/"
             className="inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground mb-8"
           >
             <ArrowLeft className="h-4 w-4" />
@@ -133,7 +133,7 @@ export default function TopicsPage() {
           <div className="max-w-3xl">
             <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">Topics & Content</h1>
             <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
-              A preview of the workshops, live streams, and hands-on projects covered in The Signal. 
+              A preview of the workshops, live streams, and hands-on projects covered in AI Engineering Lab.
               Content focuses on practical, production-grade AI and ML systems — not theory for theory's sake.
             </p>
           </div>
@@ -148,18 +148,18 @@ export default function TopicsPage() {
             <p className="mt-4 text-muted-foreground max-w-2xl">
               Deep-dive sessions on specific topics. Community members can propose and vote on upcoming workshops.
             </p>
-            
+
             <div className="mt-8 grid gap-4 sm:grid-cols-2">
               {workshops.map((workshop) => (
-                <div 
-                  key={workshop.title} 
+                <div
+                  key={workshop.title}
                   className="rounded-xl border border-border bg-card p-5 transition-colors hover:border-border/80"
                 >
                   <h3 className="font-medium leading-snug">{workshop.title}</h3>
                   <div className="mt-3 flex flex-wrap gap-2">
                     {workshop.tags.map((tag) => (
-                      <span 
-                        key={tag} 
+                      <span
+                        key={tag}
                         className="rounded-full bg-secondary px-2.5 py-0.5 text-xs text-muted-foreground"
                       >
                         {tag}
@@ -179,14 +179,14 @@ export default function TopicsPage() {
               <h2 className="text-xl font-semibold">Project of the Week</h2>
             </div>
             <p className="mt-4 text-muted-foreground max-w-2xl">
-              Focused, time-boxed projects where community members build together. 
+              Focused, time-boxed projects where community members build together.
               Learn by doing, share your work, get feedback.
             </p>
-            
+
             <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {projects.map((project) => (
-                <div 
-                  key={project.title} 
+                <div
+                  key={project.title}
                   className="rounded-xl border border-border bg-card p-5"
                 >
                   <h3 className="font-medium">{project.title}</h3>
@@ -201,7 +201,7 @@ export default function TopicsPage() {
               <div>
                 <h2 className="text-xl font-semibold">Content is shaped by members</h2>
                 <p className="mt-2 text-muted-foreground max-w-xl">
-                  Tier 2 and Tier 3 members can propose topics, vote on what gets covered next, 
+                  Tier 2 and Tier 3 members can propose topics, vote on what gets covered next,
                   and influence the direction of live streams and workshops.
                 </p>
               </div>

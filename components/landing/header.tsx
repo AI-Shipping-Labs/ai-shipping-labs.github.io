@@ -13,12 +13,12 @@ export function Header() {
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
         <div className="flex items-center gap-2">
           <div className="h-8 w-8 rounded bg-accent" />
-          <span className="text-lg font-semibold tracking-tight">the signal</span>
+          <span className="text-lg font-semibold tracking-tight">AI Engineering Lab</span>
         </div>
 
         <div className="hidden md:flex md:items-center md:gap-8">
           <Link href="/about" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
-            About Alexey
+            About Alexey Grigorev
           </Link>
           <Link href="/topics" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
             Topics
@@ -55,7 +55,7 @@ export function Header() {
               className="block py-2 text-muted-foreground transition-colors hover:text-foreground"
               onClick={() => setMobileMenuOpen(false)}
             >
-              About Alexey
+              About Alexey Grigorev
             </Link>
             <Link
               href="/topics"

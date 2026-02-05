@@ -9,8 +9,8 @@ import {
 
 const faqs = [
   {
-    question: "Who is Alexey?",
-    answer: "Alexey is a practitioner in AI, data, and engineering with years of hands-on experience building systems at scale. This community is built around his opinionated takes, judgment, and reasoning process—not generic advice or curated content.",
+    question: "Who is Alexey Grigorev?",
+    answer: "Alexey Grigorev is a practitioner in AI, data, and engineering with years of hands-on experience building systems at scale. This community is built around his opinionated takes, judgment, and reasoning process—not generic advice or curated content.",
   },
   {
     question: "What makes this different from other tech communities?",

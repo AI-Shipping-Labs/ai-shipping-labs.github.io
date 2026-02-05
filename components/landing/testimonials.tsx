@@ -8,13 +8,13 @@ const testimonials = [
     company: "AeroMexico",
   },
   {
-    quote: "I highly recommend this AI Agent Bootcamp. I learned a tremendous amount. The material is abundant, very well organized, and progresses in a logical and progressive manner. This made complex topics much easier to follow and digest. The instructor Alexey is clearly very knowledgeable in the field, and also super helpful and responsive to questions.",
+    quote: "I highly recommend this AI Agent Bootcamp. I learned a tremendous amount. The material is abundant, very well organized, and progresses in a logical and progressive manner. This made complex topics much easier to follow and digest. The instructor Alexey Grigorev is clearly very knowledgeable in the field, and also super helpful and responsive to questions.",
     name: "John",
     role: "AI Tutor",
     company: "Meta",
   },
   {
-    quote: "Excellent, comprehensive, and modern course that elevated my knowledge of generative AI from RAG applications to well-evaluated, fully functioning agentic systems. Alexey incorporated essential software engineering practices, especially unit testing and evaluation, teaching us how to systematically improve our agents.",
+    quote: "Excellent, comprehensive, and modern course that elevated my knowledge of generative AI from RAG applications to well-evaluated, fully functioning agentic systems. Alexey Grigorev incorporated essential software engineering practices, especially unit testing and evaluation, teaching us how to systematically improve our agents.",
     name: "Yan",
     role: "Senior Data Scientist",
     company: "Virtualitics",
@@ -46,17 +46,17 @@ export function Testimonials() {
         <div className="text-center">
           <p className="text-sm font-medium uppercase tracking-wider text-accent">What learners say</p>
           <h2 className="mt-4 text-balance text-2xl font-semibold tracking-tight sm:text-3xl">
-            From Alexey's AI Engineering courses
+            From Alexey Grigorev's AI Engineering courses
           </h2>
           <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">
-            The Signal community is new, but here's what practitioners say about learning with Alexey.
+            AI Engineering Lab community is new, but here's what practitioners say about learning with Alexey Grigorev.
           </p>
         </div>
 
         <div className="mt-16 columns-1 gap-6 sm:columns-2 lg:columns-3">
           {testimonials.map((testimonial, index) => (
-            <div 
-              key={index} 
+            <div
+              key={index}
               className="mb-6 break-inside-avoid rounded-xl border border-border bg-background p-6"
             >
               <Quote className="h-6 w-6 text-accent/50" />
