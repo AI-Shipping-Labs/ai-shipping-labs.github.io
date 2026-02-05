@@ -17,13 +17,16 @@ export function Header() {
         </div>
 
         <div className="hidden md:flex md:items-center md:gap-8">
-          <Link href="#about" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
-            About
+          <Link href="/about" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
+            About Alexey
           </Link>
-          <Link href="#tiers" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
+          <Link href="/topics" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
+            Topics
+          </Link>
+          <Link href="/#tiers" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
             Membership
           </Link>
-          <Link href="#faq" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
+          <Link href="/#faq" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
             FAQ
           </Link>
         </div>
@@ -48,21 +51,28 @@ export function Header() {
         <div className="border-t border-border bg-background md:hidden">
           <div className="space-y-1 px-6 py-4">
             <Link
-              href="#about"
+              href="/about"
               className="block py-2 text-muted-foreground transition-colors hover:text-foreground"
               onClick={() => setMobileMenuOpen(false)}
             >
-              About
+              About Alexey
             </Link>
             <Link
-              href="#tiers"
+              href="/topics"
+              className="block py-2 text-muted-foreground transition-colors hover:text-foreground"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Topics
+            </Link>
+            <Link
+              href="/#tiers"
               className="block py-2 text-muted-foreground transition-colors hover:text-foreground"
               onClick={() => setMobileMenuOpen(false)}
             >
               Membership
             </Link>
             <Link
-              href="#faq"
+              href="/#faq"
               className="block py-2 text-muted-foreground transition-colors hover:text-foreground"
               onClick={() => setMobileMenuOpen(false)}
             >

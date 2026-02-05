@@ -34,17 +34,22 @@ export function Footer() {
             <h3 className="text-sm font-semibold text-foreground">Community</h3>
             <ul className="mt-4 space-y-3">
               <li>
-                <Link href="#about" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
-                  About
+                <Link href="/about" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
+                  About Alexey
                 </Link>
               </li>
               <li>
-                <Link href="#tiers" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
+                <Link href="/topics" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
+                  Topics
+                </Link>
+              </li>
+              <li>
+                <Link href="/#tiers" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
                   Membership Tiers
                 </Link>
               </li>
               <li>
-                <Link href="#faq" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
+                <Link href="/#faq" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
                   FAQ
                 </Link>
               </li>
@@ -55,19 +60,24 @@ export function Footer() {
             <h3 className="text-sm font-semibold text-foreground">Connect</h3>
             <ul className="mt-4 space-y-3">
               <li>
-                <Link href="#" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
+                <a href="https://alexeyondata.substack.com" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
                   Substack
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="#" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
+                <a href="https://youtube.com/@datatalksclub" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
                   YouTube
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="#" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
+                <a href="https://linkedin.com/in/agrigorev" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
                   LinkedIn
-                </Link>
+                </a>
+              </li>
+              <li>
+                <a href="https://datatalks.club" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
+                  DataTalks.Club
+                </a>
               </li>
             </ul>
           </div>
