@@ -5,7 +5,7 @@ import { Footer } from "@/components/landing/footer"
 import { getAllResources } from "@/lib/resources"
 
 export const metadata = {
-  title: "Resources | AI Shipping Labs",
+  title: "Event Recordings | AI Shipping Labs",
   description: "Workshops, videos, and learning materials from Alexey's workshops.",
 }
 
@@ -19,7 +19,7 @@ export default async function ResourcesPage() {
         <section className="py-16 lg:py-24">
           <div className="mx-auto max-w-4xl px-6 lg:px-8">
             <div className="mb-12">
-              <p className="text-sm font-medium uppercase tracking-widest text-accent">Resources</p>
+              <p className="text-sm font-medium uppercase tracking-widest text-accent">Event Recordings</p>
               <h1 className="mt-4 text-balance text-3xl font-semibold tracking-tight sm:text-4xl">
                 Workshops & Learning Materials
               </h1>

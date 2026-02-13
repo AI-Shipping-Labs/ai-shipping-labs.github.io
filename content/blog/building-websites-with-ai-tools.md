@@ -129,7 +129,7 @@ Handles hosting. It's free to use and provides:
 
 **Content separation pays off immediately**: Moving data to YAML files in `_data/` means I can update my courses and projects without touching any code going forward.
 
-**The first result can surprise you**: Lovable's first iteration was already good enough to use. Don't over-engineer the initial prompt—see what you get and iterate from there.
+**The first result can surprise you**: Lovable's first iteration was already good enough to use. Don't over-engineer the initial prompt: see what you get and iterate from there.
 
 The technology has evolved to the point where the hardest part is deciding what content to include, not how to build it.
 

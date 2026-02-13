@@ -1,15 +1,16 @@
 import Link from "next/link"
+import Image from "next/image"
 import { ArrowLeft, ExternalLink, Youtube, Linkedin, BookOpen, GraduationCap, Trophy, Users } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Header } from "@/components/landing/header"
 import { Footer } from "@/components/landing/footer"
 
 export const metadata = {
-  title: "About Alexey Grigorev | AI Shipping Labs",
-  description: "Meet Alexey Grigorev Grigorev - Software engineer and ML practitioner with 15+ years of experience. Founder of DataTalks.Club and creator of the Zoomcamp series.",
+  title: "About | AI Shipping Labs",
+  description: "Learn about AI Shipping Labs community and its founders Alexey Grigorev and Valeriia Kuka.",
 }
 
-const highlights = [
+const alexeyHighlights = [
   {
     icon: Users,
     label: "100,000+",
@@ -32,7 +33,7 @@ const highlights = [
   },
 ]
 
-const links = [
+const alexeyLinks = [
   {
     label: "DataTalks.Club",
     href: "https://datatalks.club",
@@ -45,12 +46,12 @@ const links = [
   },
   {
     label: "AI Engineering Buildcamp",
-    href: "https://maven.com/Alexey Grigorev-grigorev/from-rag-to-agents",
+    href: "https://maven.com/alexey-grigorev/from-rag-to-agents",
     description: "From RAG to Agents course",
   },
   {
     label: "CV & Portfolio",
-    href: "https://Alexey Grigorevgrigorev.com/cv",
+    href: "https://alexeygrigorev.com/cv",
     description: "Full background and experience",
   },
 ]
@@ -70,130 +71,123 @@ export default function AboutPage() {
             Back to home
           </Link>
 
-          <div className="flex flex-col gap-8 lg:flex-row lg:gap-16">
-            <div className="flex-shrink-0">
-              <div className="h-48 w-48 rounded-2xl bg-secondary flex items-center justify-center">
-                <span className="text-6xl font-bold text-muted-foreground">AG</span>
-              </div>
-              <div className="mt-6 flex gap-3">
-                <a
-                  href="https://youtube.com/@datatalksclub"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex h-10 w-10 items-center justify-center rounded-lg bg-secondary text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
-                  aria-label="YouTube"
-                >
-                  <Youtube className="h-5 w-5" />
-                </a>
-                <a
-                  href="https://linkedin.com/in/agrigorev"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex h-10 w-10 items-center justify-center rounded-lg bg-secondary text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
-                  aria-label="LinkedIn"
-                >
-                  <Linkedin className="h-5 w-5" />
-                </a>
-                <a
-                  href="https://alexeyondata.substack.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex h-10 w-10 items-center justify-center rounded-lg bg-secondary text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
-                  aria-label="Substack"
-                >
-                  <BookOpen className="h-5 w-5" />
-                </a>
-              </div>
-            </div>
-
-            <div className="flex-1">
-              <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">Alexey Grigorev Grigorev</h1>
-              <p className="mt-2 text-lg text-accent">Software Engineer & ML Practitioner</p>
-
-              <div className="mt-6 space-y-4 text-muted-foreground leading-relaxed">
-                <p>
-                  Software engineer and machine learning practitioner with 15 years of experience in software engineering
-                  and 12+ years in machine learning.
-                </p>
-                <p>
-                  <strong className="text-foreground">Founder of DataTalks.Club</strong>, a community focused on practical data, ML, and AI engineering.
-                  Through the Slack community and open programs, DataTalks.Club connects tens of thousands of practitioners worldwide.
-                </p>
-                <p>
-                  <strong className="text-foreground">Creator of the Zoomcamp series</strong> — free, code-first programs covering machine learning,
-                  data engineering, MLOps, LLMs, and AI developer tools. These programs emphasize hands-on learning and
-                  real-world systems and have reached 100,000+ learners globally.
-                </p>
-                <p>
-                  My work centers on practical, production-grade ML and AI systems. I focus on how to move from early
-                  prototypes to reliable systems in production, including problem formulation, data pipelines, modeling,
-                  evaluation, deployment, and long-term operation.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="mt-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {highlights.map((item) => (
-              <div key={item.label} className="rounded-xl border border-border bg-card p-6">
-                <item.icon className="h-6 w-6 text-accent" />
-                <p className="mt-4 text-2xl font-bold">{item.label}</p>
-                <p className="mt-1 text-sm text-muted-foreground">{item.description}</p>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-16">
-            <h2 className="text-xl font-semibold">Background</h2>
+          {/* Community Introduction */}
+          <div className="mb-16">
+            <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">About AI Shipping Labs</h1>
             <div className="mt-6 space-y-4 text-muted-foreground leading-relaxed">
               <p>
-                Previously <strong className="text-foreground">Senior and Principal Data Scientist at OLX Group</strong>,
-                where I led the development of a company-wide ML platform and worked with cross-functional ML and MLOps teams.
-                Earlier roles included large-scale ML infrastructure, search, ads, and user modeling.
+                AI Shipping Labs is designed for action-oriented builders interested in AI engineering and AI tools 
+                who want to turn ideas into real projects. Whether you're learning Python or currently working as an 
+                ML engineer, this community gives you the structure, focus, and accountability to ship practical AI products.
               </p>
-              <p>
-                Author of technical books, including <strong className="text-foreground">Machine Learning Bookcamp</strong>.
-                Former Kaggle Master with top rankings in international competitions such as the NIPS'17 Criteo Challenge and WSDM Cup 2017.
-              </p>
-            </div>
-
-            <h3 className="mt-8 text-lg font-medium">Areas of Focus</h3>
-            <div className="mt-4 flex flex-wrap gap-2">
-              {["AI Engineering", "Agentic Systems", "Production ML", "MLOps", "Open-Source Education", "Learning by Building"].map((tag) => (
-                <span key={tag} className="rounded-full border border-border bg-secondary px-3 py-1 text-sm">
-                  {tag}
-                </span>
-              ))}
             </div>
           </div>
 
-          <div className="mt-16">
-            <h2 className="text-xl font-semibold">Learn More</h2>
-            <div className="mt-6 grid gap-4 sm:grid-cols-2">
-              {links.map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group flex items-start gap-4 rounded-xl border border-border bg-card p-5 transition-colors hover:border-accent"
-                >
-                  <div className="flex-1">
-                    <p className="font-medium group-hover:text-accent transition-colors">{link.label}</p>
-                    <p className="mt-1 text-sm text-muted-foreground">{link.description}</p>
-                  </div>
-                  <ExternalLink className="h-4 w-4 text-muted-foreground group-hover:text-accent transition-colors flex-shrink-0" />
-                </a>
-              ))}
+          {/* Founders Section */}
+          <div className="mb-16">
+            <h2 className="text-2xl font-semibold mb-8">Founders</h2>
+            
+            {/* Alexey Grigorev */}
+            <div className="mb-16 flex flex-col gap-8 lg:flex-row lg:gap-16">
+              <div className="flex-shrink-0">
+                <div className="h-48 w-48 rounded-2xl overflow-hidden">
+                  <Image
+                    src="/alexey.png"
+                    alt="Alexey Grigorev"
+                    width={192}
+                    height={192}
+                    className="h-full w-full object-cover"
+                  />
+                </div>
+                <div className="mt-6 flex gap-3">
+                  <a
+                    href="https://linkedin.com/in/agrigorev"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex h-10 w-10 items-center justify-center rounded-lg bg-secondary text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
+                    aria-label="LinkedIn"
+                  >
+                    <Linkedin className="h-5 w-5" />
+                  </a>
+                </div>
+              </div>
+
+              <div className="flex-1">
+                <h3 className="text-2xl font-bold tracking-tight">Alexey Grigorev</h3>
+                <p className="mt-2 text-lg text-accent">Co-founder & ML Engineer</p>
+
+                <div className="mt-6 space-y-4 text-muted-foreground leading-relaxed">
+                  <p>
+                    Software engineer and machine learning practitioner with 15+ years of experience building production ML systems.
+                    I focus on practical, production-grade ML and AI systems, from early prototypes to reliable systems in production.
+                  </p>
+                  <p>
+                    I'm the founder of DataTalks.Club, a free community that connects tens of thousands 
+                    of practitioners worldwide, and the creator of the Zoomcamp series, free, code-first 
+                    programs that have reached 100,000+ learners globally.
+                  </p>
+                  <p>
+                    At AI Shipping Labs, I'm building the kind of environment that would have accelerated my own career growth. 
+                    After years of teaching at scale, I wanted something more focused: a space for action-oriented builders who 
+                    want to turn AI ideas into real projects. The community gives members the structure, accountability, and peer 
+                    support to ship practical AI products consistently, even alongside their main jobs.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Valeriia Kuka */}
+            <div className="flex flex-col gap-8 lg:flex-row lg:gap-16">
+              <div className="flex-shrink-0">
+                <div className="h-48 w-48 rounded-2xl overflow-hidden">
+                  <Image
+                    src="/valeriia.png"
+                    alt="Valeriia Kuka"
+                    width={192}
+                    height={192}
+                    className="h-full w-full object-cover"
+                  />
+                </div>
+                <div className="mt-6 flex gap-3">
+                  <a
+                    href="https://linkedin.com/in/valeriia-kuka"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex h-10 w-10 items-center justify-center rounded-lg bg-secondary text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
+                    aria-label="LinkedIn"
+                  >
+                    <Linkedin className="h-5 w-5" />
+                  </a>
+                </div>
+              </div>
+
+              <div className="flex-1">
+                <h3 className="text-2xl font-bold tracking-tight">Valeriia Kuka</h3>
+                <p className="mt-2 text-lg text-accent">Co-founder & Content Strategist</p>
+
+                <div className="mt-6 space-y-4 text-muted-foreground leading-relaxed">
+                  <p>
+                    Content strategist and technical writer specializing in AI/ML education. I focus on making complex 
+                    technical concepts accessible and helping builders learn through clear, practical content.
+                  </p>
+                  <p>
+                    At AI Shipping Labs, I work alongside Alexey to shape the community's content strategy and member experience. 
+                    I ensure that motivated learners have the resources, frameworks, and clear direction they need to make 
+                    consistent progress on their AI projects. My goal is to help builders bridge the gap from ideas to 
+                    shipped products by providing structure and removing friction from the learning-by-doing process.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
 
+          {/* Why AI Shipping Labs */}
           <div className="mt-16 rounded-2xl border border-accent/30 bg-accent/5 p-8 text-center">
             <h2 className="text-xl font-semibold">Why AI Shipping Labs?</h2>
             <p className="mt-4 text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              After years of building communities and teaching at scale, I wanted to create something more focused.
-              A smaller group where the conversations go deeper, where I can provide real feedback on your work,
-              and where we can think through hard problems together. Not more content — better calibration.
+              If you have AI project ideas but lack structure, focus, and accountability, this community is for you. 
+              Get clear frameworks, direction, and gentle external pressure to make consistent progress. 
+              Build alongside motivated practitioners who turn ideas into real projects and contribute back to the ecosystem.
             </p>
             <Button asChild size="lg" className="mt-8 bg-accent text-accent-foreground hover:bg-accent/90">
               <Link href="/#tiers">View Membership Tiers</Link>

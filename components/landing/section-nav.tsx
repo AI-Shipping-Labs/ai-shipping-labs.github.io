@@ -9,7 +9,7 @@ const sections = [
   { id: "tiers", label: "Membership" },
   { id: "testimonials", label: "Testimonials" },
   { id: "blog", label: "Blog" },
-  { id: "collection", label: "Collection" },
+  { id: "collection", label: "Curated Links" },
   { id: "newsletter", label: "Newsletter" },
   { id: "faq", label: "FAQ" },
 ]

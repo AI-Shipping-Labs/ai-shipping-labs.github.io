@@ -14,11 +14,12 @@ import {
   Trophy,
   Check,
   Users,
-  Star
+  Star,
+  Briefcase
 } from "lucide-react"
 import { cn } from "@/lib/utils"
 
-type TierKey = "supporter" | "community" | "inner"
+type TierKey = "basic" | "main" | "premium"
 
 interface Activity {
   icon: React.ElementType
@@ -29,82 +30,112 @@ interface Activity {
 
 const activities: Activity[] = [
   {
-    icon: Video,
-    title: "Biweekly Expert Sessions",
-    description: "Regular sessions focused on one narrow, practical topic, led by Alexey or a trusted expert. Each session includes a written summary with key insights, decisions, and action points—turning every session into a long-term asset.",
-    tiers: ["supporter", "community", "inner"],
-  },
-  {
-    icon: MessageCircleQuestion,
-    title: "Structured Q&A with Alexey",
-    description: "Recurring Q&A sessions where members submit questions ahead of time. Alexey answers by explaining reasoning, trade-offs, and priorities rather than giving quick fixes. Community members can join live and ask questions directly.",
-    tiers: ["community", "inner"],
-  },
-  {
-    icon: FileEdit,
-    title: "Influence Content Direction",
-    description: "Propose, vote on, or refine upcoming newsletter topics and workshop themes. Option to collaborate with Alexey and publish articles on the Alexey on Data newsletter.",
-    tiers: ["community", "inner"],
+    icon: BookOpen,
+    title: "Exclusive Substack Content",
+    description: "Full access to premium paywalled articles with practical AI insights, hands-on tutorials with code examples you can implement, and curated breakdowns of new AI tools and workflows to accelerate your projects.",
+    tiers: ["basic", "main", "premium"],
   },
   {
     icon: Eye,
-    title: "Early Access to Drafts",
-    description: "See draft content, talk outlines, and early ideas before they go public. Get first access to materials that will appear on the newsletter and YouTube channel.",
-    tiers: ["community", "inner"],
+    title: "Behind-the-Scenes Research",
+    description: "Get exclusive access to ongoing research and experiments. See work-in-progress findings and early-stage ideas not available publicly.",
+    tiers: ["basic", "main", "premium"],
   },
   {
-    icon: BookOpen,
-    title: "Curated Resource Library",
-    description: "A members-only collection of carefully selected resources with short annotations explaining why each one matters and when to use it.",
-    tiers: ["community", "inner"],
-  },
-  {
-    icon: Percent,
-    title: "Discounts & Promo Access",
-    description: "Occasional access to discounts for relevant tools, courses, and resources—positioned as a bonus rather than a core benefit.",
-    tiers: ["community", "inner"],
-  },
-  {
-    icon: FolderKanban,
-    title: "Project of the Month",
-    description: "Similar to Project of the Week at DataTalks.Club, but exclusive to community members. Work on focused, practical projects with structured guidance.",
-    tiers: ["community", "inner"],
-  },
-  {
-    icon: Trophy,
-    title: "Internal Hackathons",
-    description: "Build alongside other practitioners in focused hackathons. Present your solutions to the whole group on video and get feedback from peers and Alexey.",
-    tiers: ["community", "inner"],
+    icon: FileEdit,
+    title: "Curated Social Content Collection",
+    description: "Never miss valuable educational posts again. Get a curated collection of evergreen social media content you can reference anytime.",
+    tiers: ["basic", "main", "premium"],
   },
   {
     icon: Users,
-    title: "Calibration Sessions",
-    description: "Exclusive sessions with Alexey: resume, LinkedIn, or GitHub teardowns focused on patterns, positioning, and decision quality. Sessions are shared within the Inner Circle to maximize learning.",
-    tiers: ["inner"],
+    title: "Closed Community Access",
+    description: "Connect with action-oriented builders who are shipping practical AI products. Network with motivated peers, collaborate on projects, and learn from practitioners who convert ideas into tangible contributions.",
+    tiers: ["main", "premium"],
+  },
+  {
+    icon: MessageCircleQuestion,
+    title: "Collaborative Problem-Solving & Mentorship",
+    description: "Get help with implementation challenges and complex issues. Learn from practitioners at various career stages and receive guidance on technical problems you're facing.",
+    tiers: ["main", "premium"],
+  },
+  {
+    icon: Video,
+    title: "Interactive Group Coding Sessions",
+    description: "Join sessions where community members and hosts code live, working through real problems. Watch, participate, and engage with comments as you learn.",
+    tiers: ["main", "premium"],
+  },
+  {
+    icon: FolderKanban,
+    title: "Guided Project-Based Learning",
+    description: "Get the structure and direction you need to make consistent progress. Follow curated project frameworks, share your progress with the community, and build practical AI products with clear milestones.",
+    tiers: ["main", "premium"],
+  },
+  {
+    icon: Trophy,
+    title: "Community Hackathons",
+    description: "Turn ideas into shipped projects through focused hackathons. Get gentle external pressure and accountability to build, share your work, and learn from other builders' approaches. Many members emerge from hackathons as active contributors.",
+    tiers: ["main", "premium"],
+  },
+  {
+    icon: Briefcase,
+    title: "Career Advancement Discussions",
+    description: "Discuss your career questions and get feedback from experienced practitioners in the community. Share experiences, get advice on job searches, interviews, and career growth.",
+    tiers: ["main", "premium"],
   },
   {
     icon: Star,
-    title: "1-on-1 & Small Group Access",
-    description: "Eligibility for limited 1-on-1 or small-group conversations with Alexey. Participation rotates across members. Conversations are exploratory and reflective.",
-    tiers: ["inner"],
+    title: "Personal Brand Development",
+    description: "Share your project results publicly and strengthen your professional presence. Get guidance on showcasing your work, building in public, and demonstrating real-world impact. Especially valuable for career transitioners and early career professionals.",
+    tiers: ["main", "premium"],
+  },
+  {
+    icon: Percent,
+    title: "Developer Productivity Tips & Workflows",
+    description: "Get tips, workflows, and best practices to boost your productivity as a developer. Learn techniques to work more efficiently and effectively.",
+    tiers: ["main", "premium"],
+  },
+  {
+    icon: FileEdit,
+    title: "Propose and Vote on Topics",
+    description: "Have a voice in the community's direction. Propose ideas and vote on future topics for content, workshops, and sessions.",
+    tiers: ["main", "premium"],
+  },
+  {
+    icon: BookOpen,
+    title: "Mini-Courses on Specialized Topics",
+    description: "Access all mini-courses covering specialized topics like Python for Data & AI Engineering, and more. The collection is regularly updated with new courses.",
+    tiers: ["premium"],
+  },
+  {
+    icon: FileEdit,
+    title: "Vote on Course Topics",
+    description: "Have a say in what gets taught next. Propose ideas and vote on upcoming mini-course topics to shape the curriculum.",
+    tiers: ["premium"],
+  },
+  {
+    icon: Users,
+    title: "Profile Teardowns",
+    description: "Get detailed feedback on your resume, LinkedIn, and GitHub profiles. Understand what works, what doesn't, and how to improve your professional presence.",
+    tiers: ["premium"],
   },
 ]
 
 const tierConfig = {
-  supporter: {
-    name: "Supporter",
+  basic: {
+    name: "Basic",
     color: "border-muted-foreground/30",
     bgActive: "bg-muted-foreground/20",
     textActive: "text-muted-foreground",
   },
-  community: {
-    name: "Community",
+  main: {
+    name: "Main",
     color: "border-accent",
     bgActive: "bg-accent",
     textActive: "text-accent-foreground",
   },
-  inner: {
-    name: "Inner Circle",
+  premium: {
+    name: "Premium",
     color: "border-foreground",
     bgActive: "bg-foreground",
     textActive: "text-background",
@@ -127,7 +158,8 @@ export function Activities() {
             Activities and access by tier
           </h2>
           <p className="mt-6 text-pretty text-lg leading-relaxed text-muted-foreground">
-            Each tier unlocks more ways to learn, build, and get feedback. Filter by tier to see what's included.
+            Each tier gives you more structure, accountability, and support to ship your AI projects. 
+            From self-paced content to guided projects and peer collaboration. Filter by tier to see what's included.
           </p>
         </div>
 
@@ -211,19 +243,19 @@ export function Activities() {
             Quick comparison
           </h3>
           <div className="grid gap-6 md:grid-cols-3">
-            {/* Supporter */}
+            {/* Basic */}
             <div className="rounded-xl border border-border bg-card p-6">
               <div className="mb-4 flex items-center gap-3">
                 <div className="rounded-full bg-muted-foreground/20 p-2">
-                  <Eye className="h-4 w-4 text-muted-foreground" />
+                  <BookOpen className="h-4 w-4 text-muted-foreground" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-foreground">Supporter</h4>
-                  <p className="text-xs text-muted-foreground">Read and watch</p>
+                  <h4 className="font-semibold text-foreground">Basic</h4>
+                  <p className="text-xs text-muted-foreground">Content only</p>
                 </div>
               </div>
               <ul className="space-y-2">
-                {activities.filter(a => a.tiers.includes("supporter")).map(a => (
+                {activities.filter(a => a.tiers.includes("basic")).map(a => (
                   <li key={a.title} className="flex items-center gap-2 text-sm text-muted-foreground">
                     <Check className="h-3.5 w-3.5 shrink-0 text-accent" />
                     {a.title}
@@ -232,24 +264,24 @@ export function Activities() {
               </ul>
               <div className="mt-4 border-t border-border pt-4">
                 <p className="text-xs text-muted-foreground">
-                  {activities.filter(a => a.tiers.includes("supporter")).length} activities
+                  {activities.filter(a => a.tiers.includes("basic")).length} activities
                 </p>
               </div>
             </div>
 
-            {/* Community */}
+            {/* Main */}
             <div className="rounded-xl border border-accent bg-card p-6">
               <div className="mb-4 flex items-center gap-3">
                 <div className="rounded-full bg-accent p-2">
                   <Users className="h-4 w-4 text-accent-foreground" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-foreground">Community</h4>
-                  <p className="text-xs text-accent">Build together</p>
+                  <h4 className="font-semibold text-foreground">Main</h4>
+                  <p className="text-xs text-accent">Structure + accountability</p>
                 </div>
               </div>
               <ul className="space-y-2">
-                {activities.filter(a => a.tiers.includes("community")).map(a => (
+                {activities.filter(a => a.tiers.includes("main")).map(a => (
                   <li key={a.title} className="flex items-center gap-2 text-sm text-muted-foreground">
                     <Check className="h-3.5 w-3.5 shrink-0 text-accent" />
                     {a.title}
@@ -258,24 +290,24 @@ export function Activities() {
               </ul>
               <div className="mt-4 border-t border-border pt-4">
                 <p className="text-xs text-muted-foreground">
-                  {activities.filter(a => a.tiers.includes("community")).length} activities
+                  {activities.filter(a => a.tiers.includes("main")).length} activities
                 </p>
               </div>
             </div>
 
-            {/* Inner Circle */}
+            {/* Premium */}
             <div className="rounded-xl border border-foreground bg-card p-6">
               <div className="mb-4 flex items-center gap-3">
                 <div className="rounded-full bg-foreground p-2">
                   <Star className="h-4 w-4 text-background" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-foreground">Inner Circle</h4>
-                  <p className="text-xs text-muted-foreground">Direct access</p>
+                  <h4 className="font-semibold text-foreground">Premium</h4>
+                  <p className="text-xs text-muted-foreground">Courses + career growth</p>
                 </div>
               </div>
               <ul className="space-y-2">
-                {activities.filter(a => a.tiers.includes("inner")).map(a => (
+                {activities.filter(a => a.tiers.includes("premium")).map(a => (
                   <li key={a.title} className="flex items-center gap-2 text-sm text-muted-foreground">
                     <Check className="h-3.5 w-3.5 shrink-0 text-accent" />
                     {a.title}
@@ -284,7 +316,7 @@ export function Activities() {
               </ul>
               <div className="mt-4 border-t border-border pt-4">
                 <p className="text-xs text-muted-foreground">
-                  All {activities.filter(a => a.tiers.includes("inner")).length} activities
+                  All {activities.filter(a => a.tiers.includes("premium")).length} activities
                 </p>
               </div>
             </div>

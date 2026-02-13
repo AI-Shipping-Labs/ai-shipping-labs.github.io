@@ -9,36 +9,32 @@ import {
 
 const faqs = [
   {
-    question: "Who is Alexey Grigorev?",
-    answer: "Alexey Grigorev is a practitioner in AI, data, and engineering with years of hands-on experience building systems at scale. This community is built around his opinionated takes, judgment, and reasoning process—not generic advice or curated content.",
+    question: "Who is this community for?",
+    answer: "Action-oriented builders interested in AI engineering and AI tools who want to turn ideas into real projects. Whether you're learning Python or working as an ML engineer, if you have project ideas but need structure, focus, and accountability, this community is for you. We attract motivated learners who prefer learning by doing and builders who contribute back to the ecosystem.",
   },
   {
     question: "What makes this different from other tech communities?",
-    answer: "Most communities optimize for engagement metrics. This one optimizes for calibration—helping you develop better technical judgment. There's no content for content's sake. Everything is filtered through real-world experience and active practice.",
+    answer: "We focus on helping you ship practical AI products, not just consume content. You get clear frameworks, direction, and gentle external pressure to make consistent progress on your projects. The community concentrates highly engaged builders in a focused environment centered on productivity, structured execution, and hands-on project work.",
   },
   {
-    question: "What does 'calibration' mean?",
-    answer: "Calibration is about refining your instincts for technical decisions. Instead of giving you answers, the goal is to expose you to reasoning patterns, decision frameworks, and feedback that helps you make better calls in your own context.",
-  },
-  {
-    question: "Why is the Inner Circle capped?",
-    answer: "Quality feedback requires attention. The Inner Circle is intentionally limited to preserve the depth of interaction. Calibration sessions, teardowns, and 1-on-1 conversations are only valuable if they're not diluted.",
+    question: "I have a main job. Can I still participate?",
+    answer: "Yes. The community is designed to help you make consistent progress on side projects even with limited time. You get the structure and accountability to stay focused and ship incrementally through projects, hackathons, and collaborative activities.",
   },
   {
     question: "What if I just want the content without community?",
-    answer: "The Supporter tier is designed exactly for this. You get access to written materials, opinionated briefs, and recordings without any expectation of participation. Signal without social overhead.",
+    answer: "The Basic tier is designed exactly for this. You get access to exclusive content, tutorials, research, and curated materials without any expectation of community participation. Perfect for self-directed builders who learn at their own pace.",
   },
   {
-    question: "How do live streams work?",
-    answer: "Community Members can join live streams, submit questions ahead of time, and ask questions during the session. Topics are influenced by member votes. Supporters get access to recordings only.",
+    question: "What's included in the Main tier?",
+    answer: "Main tier gives you the structure, accountability, and peer support to ship your AI projects consistently. Includes everything in Basic, plus closed community access, collaborative problem-solving, interactive group coding sessions, guided projects, hackathons, career discussions, and the ability to propose and vote on topics.",
   },
   {
-    question: "Can I upgrade or downgrade my tier?",
-    answer: "Yes. You can change tiers at any time. Upgrades are prorated. Downgrades take effect at the next billing cycle. Note that Inner Circle upgrades are subject to availability.",
+    question: "What's included in the Premium tier?",
+    answer: "Premium tier accelerates your growth with structured learning paths through mini-courses and personalized career guidance. Includes everything in Main, plus access to all mini-courses on specialized topics, the ability to vote on course topics, and professional profile teardowns (resume, LinkedIn, GitHub).",
   },
   {
-    question: "Is this a course or coaching program?",
-    answer: "No. This is a community for practitioners who are already building. There's no curriculum, no certificates, and no structured learning path. It's designed for people who want calibration, not instruction.",
+    question: "When will the community launch?",
+    answer: "We'll announce the launch date publicly. Subscribe to the newsletter to get notified when we open and be among the first to join.",
   },
 ]
 

@@ -57,7 +57,7 @@ export function CollectionSection() {
           <div>
             <p className="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-4 py-1.5 text-sm text-accent">
               <FolderOpen className="h-4 w-4" />
-              Collection
+              Curated Links
             </p>
             <h2 className="mt-4 text-balance text-3xl font-semibold tracking-tight sm:text-4xl">
               Tools, Models & Courses
@@ -71,7 +71,7 @@ export function CollectionSection() {
             href="/collection"
             className="inline-flex items-center gap-2 text-sm font-medium text-accent transition-colors hover:text-accent/80"
           >
-            View full collection
+            View all curated links
             <ArrowRight className="h-4 w-4" />
           </Link>
         </div>

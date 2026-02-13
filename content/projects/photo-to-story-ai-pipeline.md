@@ -16,8 +16,8 @@ A fun, holiday-friendly project to try in a week: build a **photo-to-story** AI 
 - Publish on a **small website**
 - Share as a **podcast feed** (RSS)
 
-You can also explore other directions: text-to-text variations, speech-to-text, or different output formats. Use your creativity—it's a practical way to experiment with **multimodal** projects (vision, text, and speech) in one pipeline.
+You can also explore other directions: text-to-text variations, speech-to-text, or different output formats. Use your creativity: it's a practical way to experiment with **multimodal** projects (vision, text, and speech) in one pipeline.
 
-Alexey built a full version of this idea: [Kids Horror Stories](https://github.com/alexeygrigorev/kids-horror-stories-ru)—photo in, story + illustration + narration out, published on the web and as a Spotify podcast. You can read the architecture and implementation in the blog post below.
+Alexey built a full version of this idea: [Kids Horror Stories](https://github.com/alexeygrigorev/kids-horror-stories-ru). Photo in, story + illustration + narration out, published on the web and as a Spotify podcast. You can read the architecture and implementation in the blog post below.
 
 [How I built an automated image-to-podcast pipeline](/blog/how-i-built-automated-image-to-podcast-pipeline) · [Kids Horror Stories (GitHub)](https://github.com/alexeygrigorev/kids-horror-stories-ru)

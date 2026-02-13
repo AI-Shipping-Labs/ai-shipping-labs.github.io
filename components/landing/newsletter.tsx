@@ -1,6 +1,5 @@
 "use client"
 
-import Link from "next/link"
 import { Mail, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
@@ -15,15 +14,16 @@ export function Newsletter() {
               Free Newsletter
             </div>
             <h2 className="text-balance text-2xl font-semibold tracking-tight sm:text-3xl">
-              Want to know when we launch?
+              Ready to turn your AI ideas into real projects?
             </h2>
             <p className="mt-4 text-pretty text-muted-foreground leading-relaxed">
-              Subscribe to the free newsletter and get the first ping when the community opens.
+              Subscribe to the free newsletter and get notified when the community opens. 
+              Join action-oriented builders who are shipping practical AI products.
             </p>
             <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-6">
               <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 shrink-0">
                 <a
-                  href="https://alexeyondata.substack.com"
+                  href="https://alexeyondata.substack.com/subscribe"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2"

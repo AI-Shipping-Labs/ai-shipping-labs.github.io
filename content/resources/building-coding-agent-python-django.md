@@ -1,6 +1,6 @@
 ---
 title: "Building a Coding Agent: Python/Django Edition"
-description: "Build your own project bootstrapper—a coding agent similar to Lovable, but for Python/Django projects. Learn how to create a tool-using agent that can bootstrap complete applications from natural language instructions."
+description: "Build your own project bootstrapper: a coding agent similar to Lovable, but for Python/Django projects. Learn how to create a tool-using agent that can bootstrap complete applications from natural language instructions."
 date: "2025-08-14"
 tags: ["ai-agents", "coding-agents", "django", "python", "llm-engineering"]
 level: "Intermediate to Advanced"
@@ -104,17 +104,17 @@ learningObjectives:
   - "Comparing different LLM providers (OpenAI, Anthropic, Z.AI)"
   - "Testing agents with real-world projects"
   - "Understanding how project bootstrappers work internally"
-outcome: "A fully functional project bootstrapper—a coding agent that can build Django applications based on user instructions, implemented using multiple frameworks (ToyAIKit, OpenAI Agents SDK, PydanticAI), with the ability to read/write files, search code, and generate complete applications from scratch"
+outcome: "A fully functional project bootstrapper: a coding agent that can build Django applications based on user instructions, implemented using multiple frameworks (ToyAIKit, OpenAI Agents SDK, PydanticAI), with the ability to read/write files, search code, and generate complete applications from scratch"
 relatedCourse: "AI Engineering Buildcamp: From RAG to Agents"
 ---
 
 In the [AI Coding Tools Compared](/resources/ai-coding-tools-compared) workshop, we explored different categories of AI-assisted development tools, including "Project Bootstrappers" like Lovable and claude-code CLI. Now, we're building one ourselves.
 
-This workshop guides you through building your own project bootstrapper—a coding agent similar to Lovable, but specifically designed for Python/Django projects. You'll learn how to transform a basic chatbot into a powerful tool-using agent that can read files, write code, search codebases, and build complete Django applications based on natural language instructions.
+This workshop guides you through building your own project bootstrapper: a coding agent similar to Lovable, but specifically designed for Python/Django projects. You'll learn how to transform a basic chatbot into a powerful tool-using agent that can read files, write code, search codebases, and build complete Django applications based on natural language instructions.
 
 ## Workshop Overview
 
-Learn how to build a project bootstrapper—a coding agent that can understand user requirements and automatically generate Django applications. This workshop covers the complete journey from basic chatbots to production-ready agents using multiple frameworks. You'll create your own version of tools like Lovable, but tailored for Python/Django development.
+Learn how to build a project bootstrapper: a coding agent that can understand user requirements and automatically generate Django applications. This workshop covers the complete journey from basic chatbots to production-ready agents using multiple frameworks. You'll create your own version of tools like Lovable, but tailored for Python/Django development.
 
 ## What You'll Learn
 

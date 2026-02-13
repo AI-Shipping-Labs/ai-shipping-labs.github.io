@@ -11,12 +11,12 @@ difficulty: "intermediate"
 
 **Why it's useful:** It doubles as a **reference implementation** for building **sensitive-data systems**. Production-grade structure is built in from the start:
 
-- **Role-based access control (RBAC)** — Admin, Doctor, Nurse, Receptionist, Patient roles with strict endpoint protection
-- **Audit logging** — Major actions logged for compliance (AuditLog collection)
-- **Input validation** — Mongoose schemas plus centralized validators
-- **Rate limiting** — Brute-force and DoS protection
-- **Soft deletes** — Critical entities (e.g. Patient) use `isDeleted` with transparent filtering so data is never hard-deleted
-- **Security** — Helmet, CORS, HPP, consistent API response shapes
+- **Role-based access control (RBAC)**: Admin, Doctor, Nurse, Receptionist, Patient roles with strict endpoint protection
+- **Audit logging**: Major actions logged for compliance (AuditLog collection)
+- **Input validation**: Mongoose schemas plus centralized validators
+- **Rate limiting**: Brute-force and DoS protection
+- **Soft deletes**: Critical entities (e.g. Patient) use `isDeleted` with transparent filtering so data is never hard-deleted
+- **Security**: Helmet, CORS, HPP, consistent API response shapes
 
 **Core features:** Landing page, authentication, patient registry with medical history, appointments (schedule and status), medical records, ward management (bed occupancy), analytics dashboard.
 

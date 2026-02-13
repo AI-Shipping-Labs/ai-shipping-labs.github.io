@@ -13,7 +13,7 @@ export async function ResourcesSection() {
           <div>
             <p className="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-4 py-1.5 text-sm text-accent">
               <Video className="h-4 w-4" />
-              Resources
+              Event Recordings
             </p>
             <h2 className="mt-4 text-balance text-3xl font-semibold tracking-tight sm:text-4xl">
               Workshops & Learning Materials
@@ -26,7 +26,7 @@ export async function ResourcesSection() {
             href="/resources"
             className="inline-flex items-center gap-2 text-sm font-medium text-accent transition-colors hover:text-accent/80"
           >
-            View all resources
+            View all recordings
             <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
@@ -34,7 +34,7 @@ export async function ResourcesSection() {
         {latestResources.length === 0 ? (
           <div className="mt-12 rounded-lg border border-border bg-card p-8 text-center">
             <p className="text-muted-foreground">
-              Resources coming soon. Check back for workshops and learning materials.
+              Event recordings coming soon. Check back for workshops and learning materials.
             </p>
           </div>
         ) : (

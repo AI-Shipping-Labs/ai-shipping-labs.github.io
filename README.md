@@ -24,7 +24,6 @@ This is a static Next.js application that serves as a landing page and content h
 │   ├── collection/        # Collection page
 │   ├── projects/          # Projects listing and individual projects
 │   ├── resources/         # Resources listing and individual resources
-│   ├── topics/            # Topics page
 │   ├── tutorials/         # Tutorials listing and individual tutorials
 │   ├── layout.tsx         # Root layout with metadata
 │   ├── page.tsx           # Home page
@@ -77,7 +76,6 @@ This is a static Next.js application that serves as a landing page and content h
 - **Resources**: Resource articles listing and individual resource pages
 - **Tutorials**: Tutorial listing and individual tutorial pages
 - **Collection**: Collection page
-- **Topics**: Topics page
 
 ### Content Management
 

@@ -144,7 +144,7 @@ The script picks the first available image from one of two sources:
 The image is converted to base64 (for the chat image input) and passed to GPT-4o with this prompt:
 
 ```
-I want you to tell a scary story. I will send you a photograph: first, describe the photograph, and then, based on this image, come up with a horror story. Make it frightening — something in the spirit of urban folklore or urban horror legends. The ending does not have to be happy. Give the story a title.
+I want you to tell a scary story. I will send you a photograph: first, describe the photograph, and then, based on this image, come up with a horror story. Make it frightening, something in the spirit of urban folklore or urban horror legends. The ending does not have to be happy. Give the story a title.
 
 The story should consist of 8–12 paragraphs.
 
@@ -192,7 +192,7 @@ If the main character has a male name, use "man" or "boy."
 
 If the text contains more than one scene, choose only one and create a detailed description of that scene. The description should not include a sequence of actions; instead, it should focus on describing one specific moment or setting.
 
-The illustration will be used as a logo for a podcast episode, so the details should be shown in close-up. There should not be many objects — only the most essential elements needed to convey the scene. No more than one or two people.
+The illustration will be used as a logo for a podcast episode, so the details should be shown in close-up. There should not be many objects, only the most essential elements needed to convey the scene. No more than one or two people.
 
 Text:
 {first_two_paragraphs}
@@ -350,4 +350,4 @@ You can see the live project and the code here:
 - **GitHub repo**: [github.com/alexeygrigorev/kids-horror-stories-ru](https://github.com/alexeygrigorev/kids-horror-stories-ru)
 - **Spotify**: [Listen to an episode on Spotify](https://open.spotify.com/episode/0GOcZiMzHVIR4VZYEjTb8K?si=mf-3OkY0Q1aN2SSgu4zhfw)
 
-The project demonstrates how AI tools can create complete multimedia content pipelines—from a simple photo to a fully produced podcast episode—all automated and running at scale.
+The project demonstrates how AI tools can create complete multimedia content pipelines: from a simple photo to a fully produced podcast episode, all automated and running at scale.

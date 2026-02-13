@@ -15,13 +15,13 @@ export function Hero() {
           </p>
           
           <h1 className="text-balance text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl">
-            Where practitioners sharpen
-            <span className="mt-2 block text-accent">their technical judgment</span>
+            Turn AI ideas into
+            <span className="mt-2 block text-accent">real projects</span>
           </h1>
           
           <p className="mx-auto mt-8 max-w-2xl text-pretty text-lg leading-relaxed text-muted-foreground">
-            A closed community for AI, data, and engineering practitioners who want signal over noise. 
-            Led by Alexey Grigorev. Built for calibration, not content consumption.
+            A community for action-oriented builders interested in AI engineering and AI tools. 
+            Get the structure, focus, and accountability you need to ship practical AI products. 
           </p>
           
           <div className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -42,16 +42,16 @@ export function Hero() {
           
           <div className="mt-16 grid grid-cols-3 gap-8 border-t border-border pt-8">
             <div>
-              <p className="text-2xl font-semibold text-foreground">3</p>
-              <p className="mt-1 text-sm text-muted-foreground">Membership tiers</p>
+              <p className="text-2xl font-semibold text-foreground">Build</p>
+              <p className="mt-1 text-sm text-muted-foreground">Practical AI projects</p>
             </div>
             <div>
-              <p className="text-2xl font-semibold text-foreground">AI + Data</p>
-              <p className="mt-1 text-sm text-muted-foreground">Focus areas</p>
+              <p className="text-2xl font-semibold text-foreground">Ship</p>
+              <p className="mt-1 text-sm text-muted-foreground">With structure & accountability</p>
             </div>
             <div>
-              <p className="text-2xl font-semibold text-foreground">Limited</p>
-              <p className="mt-1 text-sm text-muted-foreground">Seats available</p>
+              <p className="text-2xl font-semibold text-foreground">Grow</p>
+              <p className="mt-1 text-sm text-muted-foreground">Through peer collaboration</p>
             </div>
           </div>
         </div>

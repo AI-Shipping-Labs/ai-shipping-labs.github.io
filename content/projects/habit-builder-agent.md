@@ -9,9 +9,9 @@ difficulty: "advanced"
 
 ![Architecture of Vancesca's habit builder agent](/images/projects/habit-builder-agent-architecture.png)
 
-Project from the first cohort of the [AI Engineering Bootcamp](https://maven.com/alexey-grigorev/from-rag-to-agents), by **Vancesca Dinh**.
+Project from the first cohort of the [AI Engineering Buildcamp](https://maven.com/alexey-grigorev/from-rag-to-agents), by **Vancesca Dinh**.
 
-The Habit Builder agent is grounded in data from the Huberman Lab podcast and medical publications. The data pipeline includes: downloading RSS feeds, transcribing audio with **Faster Whisper**, and storing embeddings in a **Qdrant** vector database. For the agent, she implemented a tool that rewrites user queries in three different ways to improve search results. She used **Logfire** for logging and **Pydantic** for structure. A key part of her presentation was the need for **guardrails**—she found the agent would obediently "draw a cute pig" or translate text into Romanian if asked, so she added checks to keep it focused on the intended use.
+The Habit Builder agent is grounded in data from the Huberman Lab podcast and medical publications. The data pipeline includes: downloading RSS feeds, transcribing audio with **Faster Whisper**, and storing embeddings in a **Qdrant** vector database. For the agent, she implemented a tool that rewrites user queries in three different ways to improve search results. She used **Logfire** for logging and **Pydantic** for structure. A key part of her presentation was the need for **guardrails**: she found the agent would obediently "draw a cute pig" or translate text into Romanian if asked, so she added checks to keep it focused on the intended use.
 
 **Tech stack:** RSS, Faster Whisper, Qdrant, query rewriting, Logfire, Pydantic, guardrails.
 

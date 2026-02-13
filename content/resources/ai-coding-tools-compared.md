@@ -98,7 +98,7 @@ outcome: "A comprehensive understanding of the AI-assisted development tool ecos
 relatedCourse: "AI Engineering Buildcamp: From RAG to Agents"
 ---
 
-In this workshop, Alexey Grigorev explores the rapidly growing ecosystem of AI-assisted development tools — from conversational coding apps to full-fledged autonomous agents. Through a series of live demos, he compares tools like ChatGPT, Claude, GitHub Copilot, Cursor, and Lovable, showing how each fits into a modern developer workflow and where the new generation of AI agents is heading.
+In this workshop, Alexey Grigorev explores the rapidly growing ecosystem of AI-assisted development tools: from conversational coding apps to full-fledged autonomous agents. Through a series of live demos, he compares tools like ChatGPT, Claude, GitHub Copilot, Cursor, and Lovable, showing how each fits into a modern developer workflow and where the new generation of AI agents is heading.
 
 ## Workshop Overview
 

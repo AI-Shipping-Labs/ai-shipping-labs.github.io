@@ -2,8 +2,14 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { Menu, X } from "lucide-react"
+import { Menu, X, ChevronDown } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -11,36 +17,46 @@ export function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-border bg-background/80 backdrop-blur-md">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
-        <div className="flex items-center gap-2">
+        <Link href="/" className="flex items-center gap-2">
           <div className="h-8 w-8 rounded bg-accent" />
           <span className="text-lg font-semibold tracking-tight">AI Shipping Labs</span>
-        </div>
+        </Link>
 
         <div className="hidden md:flex md:items-center md:gap-8">
           <Link href="/about" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
-            About Alexey
-          </Link>
-          <Link href="/topics" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
-            Topics
+            About
           </Link>
           <Link href="/#tiers" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
             Membership
           </Link>
-          <Link href="/blog" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
-            Blog
-          </Link>
-          <Link href="/tutorials" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
-            Tutorials
-          </Link>
-          <Link href="/projects" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
-            Project Ideas
-          </Link>
-          <Link href="/resources" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
-            Resources
-          </Link>
-          <Link href="/collection" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
-            Collection
-          </Link>
+          <DropdownMenu>
+            <DropdownMenuTrigger className="text-sm text-muted-foreground transition-colors hover:text-foreground flex items-center gap-1 outline-none">
+              Resources
+              <ChevronDown className="h-4 w-4" />
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="start" className="w-48">
+              <DropdownMenuItem asChild>
+                <Link href="/blog" className="cursor-pointer">
+                  Blog
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <Link href="/projects" className="cursor-pointer">
+                  Project Ideas
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <Link href="/resources" className="cursor-pointer">
+                  Event Recordings
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <Link href="/collection" className="cursor-pointer">
+                  Curated Links
+                </Link>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
           <Link href="/#faq" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
             FAQ
           </Link>
@@ -72,14 +88,7 @@ export function Header() {
               className="block py-2 text-muted-foreground transition-colors hover:text-foreground"
               onClick={() => setMobileMenuOpen(false)}
             >
-              About Alexey
-            </Link>
-            <Link
-              href="/topics"
-              className="block py-2 text-muted-foreground transition-colors hover:text-foreground"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Topics
+              About
             </Link>
             <Link
               href="/#tiers"
@@ -88,41 +97,39 @@ export function Header() {
             >
               Membership
             </Link>
-            <Link
-              href="/blog"
-              className="block py-2 text-muted-foreground transition-colors hover:text-foreground"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Blog
-            </Link>
-            <Link
-              href="/tutorials"
-              className="block py-2 text-muted-foreground transition-colors hover:text-foreground"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Tutorials
-            </Link>
-            <Link
-              href="/projects"
-              className="block py-2 text-muted-foreground transition-colors hover:text-foreground"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Project Ideas
-            </Link>
-            <Link
-              href="/resources"
-              className="block py-2 text-muted-foreground transition-colors hover:text-foreground"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Resources
-            </Link>
-            <Link
-              href="/collection"
-              className="block py-2 text-muted-foreground transition-colors hover:text-foreground"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Collection
-            </Link>
+            <div className="py-2">
+              <p className="text-sm font-medium text-foreground mb-2">Resources</p>
+              <div className="pl-4 space-y-1">
+                <Link
+                  href="/blog"
+                  className="block py-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Blog
+                </Link>
+                <Link
+                  href="/projects"
+                  className="block py-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Project Ideas
+                </Link>
+                <Link
+                  href="/resources"
+                  className="block py-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Event Recordings
+                </Link>
+                <Link
+                  href="/collection"
+                  className="block py-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Curated Links
+                </Link>
+              </div>
+            </div>
             <Link
               href="/#faq"
               className="block py-2 text-muted-foreground transition-colors hover:text-foreground"

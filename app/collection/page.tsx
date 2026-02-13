@@ -4,7 +4,7 @@ import { Footer } from "@/components/landing/footer"
 import { CollectionGrid } from "@/components/landing/collection-grid"
 
 export const metadata = {
-  title: "Collection | AI Shipping Labs",
+  title: "Curated Links | AI Shipping Labs",
   description:
     "Curated GitHub tools, model hubs, courses, and learning resources. Dev tools, local LLMs, and courses.",
 }
@@ -19,7 +19,7 @@ export default function CollectionPage() {
             <div className="mb-12">
               <p className="inline-flex items-center gap-2 text-sm font-medium uppercase tracking-widest text-accent">
                 <FolderOpen className="h-4 w-4" />
-                Collection
+                Curated Links
               </p>
               <h1 className="mt-4 text-balance text-3xl font-semibold tracking-tight sm:text-4xl">
                 Tools, Models & Courses

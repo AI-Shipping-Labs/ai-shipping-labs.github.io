@@ -60,7 +60,7 @@ Voice recognition sometimes gets it wrong. In the original issue I said "top 100
     width="1200"
     height="800"
   />
-  <figcaption>Comment, tag Copilot, and request updates—e.g. subtle styles and top 100 leaderboard</figcaption>
+  <figcaption>Comment, tag Copilot, and request updates (e.g. subtle styles and top 100 leaderboard)</figcaption>
 </figure>
 
 One particularly useful detail: Copilot can run the project, generate UI screenshots, and attach them to the PR. I can check that the page renders and that buttons and links behave as expected. The screenshots aren't perfect (Copilot has no internet access, so some styles don't load), but they're enough to confirm nothing is obviously broken.
@@ -125,7 +125,7 @@ Here are the specific tools that made this possible:
 
 **Reserve the laptop for the critical path**: I still use a laptop for final approval, deeper testing, and production deploy. CI/CD does the rest.
 
-**Small iterations fit mobile**: 10-30 minutes per Copilot cycle fits well into short gaps—commute, waiting room, or between meetings.
+**Small iterations fit mobile**: 10-30 minutes per Copilot cycle fits well into short gaps: commute, waiting room, or between meetings.
 
 ## See It Live
 
@@ -135,4 +135,4 @@ You can explore the result here:
 - **Course platform**: [courses.datatalks.club](https://courses.datatalks.club/)
 - **PR**: [GitHub - Add DataTalks.Club Wrapped feature #115](https://github.com/DataTalksClub/course-management-platform/pull/115)
 
-For many routine tasks, the bottleneck is no longer the machine—it's clear instructions and a good review loop.
+For many routine tasks, the bottleneck is no longer the machine: it's clear instructions and a good review loop.

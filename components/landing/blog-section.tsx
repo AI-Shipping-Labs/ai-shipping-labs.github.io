@@ -39,7 +39,7 @@ export async function BlogSection() {
             </p>
             <div className="mt-6 flex justify-center">
               <a
-                href="https://alexeyondata.substack.com"
+                href="https://alexeyondata.substack.com/subscribe"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-lg border border-accent/30 bg-accent/10 px-4 py-2 text-sm font-medium text-accent transition-colors hover:bg-accent/20"

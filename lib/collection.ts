@@ -26,9 +26,9 @@ export const COLLECTION_ITEMS: CollectionItem[] = [
     id: "lovable",
     title: "Lovable",
     description: "AI-powered app builder. Design in the browser, export to GitHub.",
-    url: "https://github.com/lovable-dev/lovable",
+    url: "https://lovable.dev",
     category: "tools",
-    source: "GitHub",
+    source: "lovable.dev",
   },
   {
     id: "cursor",
@@ -40,11 +40,11 @@ export const COLLECTION_ITEMS: CollectionItem[] = [
   },
   {
     id: "claude-code",
-    title: "claude-code CLI",
+    title: "Claude Code",
     description: "Command-line coding agent. Scaffold and edit projects from natural language.",
-    url: "https://github.com/anthropics/anthropic-cookbook/tree/main/code-cli",
+    url: "https://claude.com/claude-code",
     category: "tools",
-    source: "GitHub",
+    source: "claude.com",
   },
   {
     id: "llm-course",

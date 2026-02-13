@@ -8,7 +8,7 @@ const testimonials = [
     company: "AeroMexico",
   },
   {
-    quote: "I highly recommend this AI Agent Bootcamp. I learned a tremendous amount. The material is abundant, very well organized, and progresses in a logical and progressive manner. This made complex topics much easier to follow and digest. The instructor Alexey Grigorev is clearly very knowledgeable in the field, and also super helpful and responsive to questions.",
+    quote: "I highly recommend the AI Engineering Buildcamp. I learned a tremendous amount. The material is abundant, very well organized, and progresses in a logical and progressive manner. This made complex topics much easier to follow and digest. The instructor Alexey Grigorev is clearly very knowledgeable in the field, and also super helpful and responsive to questions.",
     name: "John",
     role: "AI Tutor",
     company: "Meta",
@@ -46,10 +46,10 @@ export function Testimonials() {
         <div className="text-center">
           <p className="text-sm font-medium uppercase tracking-wider text-accent">What learners say</p>
           <h2 className="mt-4 text-balance text-2xl font-semibold tracking-tight sm:text-3xl">
-            From Alexey Grigorev's AI Engineering courses
+            From the founder's AI Engineering courses
           </h2>
           <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">
-            AI Shipping Labs community is new, but here's what practitioners say about learning with Alexey Grigorev.
+            AI Shipping Labs community is new, but here's what practitioners say about the courses that inspired it.
           </p>
         </div>
 

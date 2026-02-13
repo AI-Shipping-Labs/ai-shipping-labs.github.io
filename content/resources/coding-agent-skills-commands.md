@@ -98,7 +98,7 @@ This workshop builds on the [Building a Coding Agent: Python/Django Edition](/re
 
 ## Workshop Overview
 
-Learn how to transform a basic coding agent into a sophisticated, general-purpose agent system that can dynamically load capabilities and execute explicit commands—similar to how Claude Code and other modern AI coding assistants work.
+Learn how to transform a basic coding agent into a sophisticated, general-purpose agent system that can dynamically load capabilities and execute explicit commands, similar to how Claude Code and other modern AI coding assistants work.
 
 ## What You'll Learn
 

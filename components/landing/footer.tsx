@@ -16,7 +16,7 @@ export function Footer() {
             <div className="mt-6 flex justify-center">
               <Button asChild className="bg-accent text-accent-foreground hover:bg-accent/90">
                 <a
-                  href="https://alexeyondata.substack.com"
+                  href="https://alexeyondata.substack.com/subscribe"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -27,14 +27,14 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-16 grid gap-8 border-t border-border pt-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-16 grid gap-8 border-t border-border pt-8 sm:grid-cols-2">
           <div>
-            <div className="flex items-center gap-2">
+            <Link href="/" className="flex items-center gap-2">
               <div className="h-6 w-6 rounded bg-accent" />
               <span className="font-semibold">AI Shipping Labs</span>
-            </div>
+            </Link>
             <p className="mt-4 text-sm text-muted-foreground">
-              A technical community for AI, data, and engineering practitioners.
+              Where action-oriented builders turn AI ideas into real projects.
             </p>
           </div>
 
@@ -43,12 +43,7 @@ export function Footer() {
             <ul className="mt-4 space-y-3">
               <li>
                 <Link href="/about" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
-                  About Alexey Grigorev
-                </Link>
-              </li>
-              <li>
-                <Link href="/topics" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
-                  Topics
+                  About
                 </Link>
               </li>
               <li>
@@ -63,53 +58,11 @@ export function Footer() {
               </li>
             </ul>
           </div>
-
-          <div>
-            <h3 className="text-sm font-semibold text-foreground">Connect</h3>
-            <ul className="mt-4 space-y-3">
-              <li>
-                <a href="https://alexeyondata.substack.com" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
-                  Substack
-                </a>
-              </li>
-              <li>
-                <a href="https://youtube.com/@datatalksclub" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
-                  YouTube
-                </a>
-              </li>
-              <li>
-                <a href="https://linkedin.com/in/agrigorev" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
-                  LinkedIn
-                </a>
-              </li>
-              <li>
-                <a href="https://datatalks.club" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
-                  DataTalks.Club
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="text-sm font-semibold text-foreground">Legal</h3>
-            <ul className="mt-4 space-y-3">
-              <li>
-                <Link href="#" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
-                  Privacy Policy
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
-                  Terms of Service
-                </Link>
-              </li>
-            </ul>
-          </div>
         </div>
 
         <div className="mt-8 border-t border-border pt-8 text-center">
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} AI Shipping Labs by Alexey Grigorev. All rights reserved.
+            © {new Date().getFullYear()} AI Shipping Labs. All rights reserved.
           </p>
         </div>
       </div>

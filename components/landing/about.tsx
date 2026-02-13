@@ -14,12 +14,12 @@ const features = [
   {
     icon: Users,
     title: "Build together",
-    description: "Work alongside other practitioners. Hackathons, projects, and group problem-solving—not isolated learning.",
+    description: "Work alongside other practitioners. Hackathons, projects, and group problem-solving instead of isolated learning.",
   },
   {
     icon: Brain,
     title: "Calibrate your judgment",
-    description: "Develop better instincts through exposure to Alexey's reasoning process and peer feedback on real decisions.",
+    description: "Develop better instincts through peer feedback, expert guidance, and exposure to real-world decision-making patterns.",
   },
 ]
 
@@ -33,8 +33,7 @@ export function About() {
             Learn by building, together
           </h2>
           <p className="mt-6 text-pretty text-lg leading-relaxed text-muted-foreground">
-            This community is built on a simple belief: the best way to learn is by doing real work, 
-            getting feedback, and building alongside others who are shipping production systems.
+            Designed for motivated learners who prefer learning by doing. Get clear frameworks, direction, and community support to make consistent progress on your projects.
           </p>
         </div>
         

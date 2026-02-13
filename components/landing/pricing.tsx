@@ -7,68 +7,61 @@ import { cn } from "@/lib/utils"
 
 const tiers = [
   {
-    name: "Supporter",
-    tagline: "Read and watch",
-    description: "Support the newsletter and get access to Alexey Grigorev's written thinking and recorded content.",
-    priceMonthly: 10,
-    priceAnnual: 100,
-    hook: "Two coffees a month for filtered signal.",
+    name: "Basic",
+    tagline: "Content only",
+    description: "Access curated educational content, tutorials, and research. Perfect for self-directed builders who learn at their own pace.",
+    priceMonthly: 20,
+    priceAnnual: 200,
+    hook: "Educational content without community access.",
     features: [
-      { text: "Support the newsletter", included: true },
-      { text: "Paid written materials on Substack", included: true },
-      { text: "Opinionated briefs on tools and practices", included: true },
-      { text: "Tutorials and hands-on materials", included: true },
-      { text: "YouTube recordings of live streams", included: true },
-      { text: "Slack community access", included: false },
-      { text: "Live participation", included: false },
-      { text: "Topic influence and voting", included: false },
-      { text: "Direct interaction with Alexey Grigorev", included: false },
+      { text: "Full access to exclusive Substack content", included: true },
+      { text: "Hands-on tutorials with code examples you can implement", included: true },
+      { text: "Curated breakdowns of new AI tools and workflows", included: true },
+      { text: "Behind-the-scenes access to ongoing research and experiments", included: true },
+      { text: "Curated collection of valuable social posts you might have missed", included: true }
     ],
-    positioning: "For readers who want signal, judgment, and context without community participation.",
+    positioning: "Best for independent builders who prefer self-paced learning. Upgrade to Main for structure, accountability, and community support.",
     highlighted: false,
   },
   {
-    name: "Community Member",
-    tagline: "Discuss, vote, and build together",
-    description: "Participate in discussions, influence topics, and join live problem-solving.",
-    priceMonthly: 35,
-    priceAnnual: 350,
-    hook: "Comparable to professional communities, not courses.",
+    name: "Main",
+    tagline: "Live learning + community",
+    description: "Everything in Basic, plus the structure, accountability, and peer support to ship your AI projects consistently.",
+    priceMonthly: 50,
+    priceAnnual: 500,
+    hook: "Build with the community and get the accountability and direction you need to make progress.",
     features: [
-      { text: "Everything in Supporter tier", included: true },
-      { text: "Closed Slack community access", included: true },
-      { text: "Community activities (Project of the Week)", included: true },
-      { text: "Propose and vote on topics", included: true },
-      { text: "Join live streams with Alexey Grigorev", included: true },
-      { text: "Structured Q&A and live questions", included: true },
-      { text: "Early access to paid materials", included: true },
-      { text: "Guaranteed 1-on-1 feedback", included: false },
-      { text: "Personalized review of work", included: false },
+      { text: "Everything in Basic", included: true },
+      { text: "Closed community access to connect and interact with practitioners", included: true },
+      { text: "Collaborative problem-solving and mentorship for implementation challenges", included: true },
+      { text: "Interactive group coding sessions led by a host", included: true },
+      { text: "Guided project-based learning with curated resources", included: true },
+      { text: "Community hackathons", included: true },
+      { text: "Career advancement discussions and feedback", included: true },
+      { text: "Personal brand development guidance and content", included: true },
+      { text: "Developer productivity tips and workflows", included: true },
+      { text: "Propose and vote on future topics", included: true },
     ],
-    positioning: "For practitioners who want to think along, contribute, and learn through shared reasoning.",
+    positioning: "Best for builders who need structure and accountability to turn project ideas into reality alongside motivated peers.",
     highlighted: true,
   },
   {
-    name: "Inner Circle",
-    tagline: "Get feedback and direct access",
-    description: "High-trust, high-touch access focused on calibration: feedback on positioning, decisions, and work-in-progress.",
-    priceMonthly: 120,
-    priceAnnual: 1200,
-    hook: "Capped membership. Quality over quantity.",
+    name: "Premium",
+    tagline: "Courses + personalized feedback",
+    description: "Everything in Main, plus structured learning paths through mini-courses and personalized career guidance to accelerate your growth.",
+    priceMonthly: 100,
+    priceAnnual: 1000,
+    hook: "Accelerate your growth with structured courses and personalized feedback.",
     features: [
-      { text: "Everything in Community tier", included: true },
-      { text: "Exclusive calibration sessions", included: true },
-      { text: "Resume, LinkedIn, GitHub teardowns", included: true },
-      { text: "Eligibility for 1-on-1 conversations", included: true },
-      { text: "Small-group exploratory sessions", included: true },
-      { text: "Priority in topic selection", included: true },
-      { text: "Access to all session outcomes", included: true },
-      { text: "Guaranteed monthly 1-on-1", included: false },
-      { text: "Consulting or coaching services", included: false },
+      { text: "Everything in Main", included: true },
+      { text: "Access to all mini-courses on specialized topics", included: true },
+      { text: "Collection regularly updated with new courses", included: true },
+      { text: "Upcoming: Python for Data and AI Engineering", included: true },
+      { text: "Propose and vote on mini-course topics", included: true },
+      { text: "Resume, LinkedIn, and GitHub teardowns", included: true },
     ],
-    positioning: "For members who are building and want their work, positioning, and decisions calibrated—not more content.",
+    positioning: "Best for builders seeking structured learning paths to complement hands-on projects, plus personalized career guidance.",
     highlighted: false,
-    capped: true,
   },
 ]
 
@@ -84,7 +77,8 @@ export function Pricing() {
             Choose your level of engagement
           </h2>
           <p className="mt-6 text-pretty text-lg leading-relaxed text-muted-foreground">
-            Each tier is designed for a different type of practitioner. More money doesn't mean more content—it means more access and interaction.
+            Each tier is designed for a different type of builder. More investment means more structure, accountability, 
+            and support to help you ship your AI projects consistently.
           </p>
           
           <div className="mt-8 flex items-center justify-center gap-4">
@@ -118,9 +112,9 @@ export function Pricing() {
             <div
               key={tier.name}
               className={cn(
-                "relative flex flex-col rounded-xl border p-8",
+                "relative flex flex-col rounded-xl border p-8 transition-all",
                 tier.highlighted
-                  ? "border-accent bg-background"
+                  ? "border-accent bg-background shadow-xl shadow-accent/10 ring-2 ring-accent/20 lg:scale-105"
                   : "border-border bg-background"
               )}
             >
@@ -129,14 +123,6 @@ export function Pricing() {
                   <span className="inline-flex items-center gap-1 rounded-full bg-accent px-3 py-1 text-xs font-medium text-accent-foreground">
                     <Star className="h-3 w-3" />
                     Most Popular
-                  </span>
-                </div>
-              )}
-              
-              {tier.capped && (
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                  <span className="inline-flex items-center gap-1 rounded-full bg-secondary px-3 py-1 text-xs font-medium text-foreground">
-                    Limited Seats
                   </span>
                 </div>
               )}
@@ -161,7 +147,7 @@ export function Pricing() {
               <p className="mb-6 text-sm text-muted-foreground">{tier.description}</p>
 
               <ul className="mb-8 flex-1 space-y-3">
-                {tier.features.map((feature) => (
+                {tier.features.map((feature, index) => (
                   <li key={feature.text} className="flex items-start gap-3">
                     {feature.included ? (
                       <Check className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
@@ -187,12 +173,12 @@ export function Pricing() {
                   className={cn(
                     "w-full",
                     tier.highlighted
-                      ? "bg-accent text-accent-foreground hover:bg-accent/90"
+                      ? "bg-accent text-accent-foreground hover:bg-accent/90 shadow-lg shadow-accent/20"
                       : "bg-secondary text-foreground hover:bg-secondary/80"
                   )}
                 >
                   <a href="/#newsletter">
-                    Subscribe for updates
+                    {tier.highlighted ? "Get Started" : "Subscribe for updates"}
                   </a>
                 </Button>
               </div>
