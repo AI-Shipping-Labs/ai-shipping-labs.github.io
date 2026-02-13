@@ -4,6 +4,8 @@ import { getAllProjects } from '@/lib/projects'
 import { getAllTutorials } from '@/lib/tutorials'
 import { getAllResources } from '@/lib/resources'
 
+export const dynamic = 'force-static'
+
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://ai-shipping-labs.com'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
