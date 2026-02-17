@@ -7,7 +7,7 @@ const paymentLinks: Record<StripeTier, { monthly: string; annual: string }> = {
   },
   main: {
     monthly: "https://buy.stripe.com/dRm8wOgDZca5bARbkFgbm02",
-    annual: "https://buy.stripe.com/cNieVc73pgql48p60lgbm03",
+    annual: "https://buy.stripe.com/3cI3cu0F12zvcEV4Whgbm06",
   },
   premium: {
     monthly: "https://buy.stripe.com/dRm3cu4Vh7TPawN3Sdgbm04",
