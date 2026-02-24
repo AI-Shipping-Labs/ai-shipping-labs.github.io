@@ -13,6 +13,18 @@ interface FaqItem {
   answer: string
 }
 
+export interface YoutubeChapter {
+  time: string
+  label: string
+}
+
+export interface YoutubeVideo {
+  id: string
+  title: string
+  description: string
+  chapters: YoutubeChapter[]
+}
+
 export interface Post {
   slug: string
   title: string
@@ -22,6 +34,7 @@ export interface Post {
   readingTime?: string
   contentHtml: string
   faq?: FaqItem[]
+  youtubeVideo?: YoutubeVideo
 }
 
 export interface PostMeta {
@@ -139,5 +152,6 @@ export async function getPostBySlug(slug: string): Promise<Post | null> {
     readingTime: calculateReadingTime(content),
     contentHtml,
     faq: (data.faq as FaqItem[]) || [],
+    youtubeVideo: data.youtubeVideo as Post["youtubeVideo"],
   }
 }

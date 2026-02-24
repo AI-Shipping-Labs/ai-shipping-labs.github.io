@@ -29,6 +29,10 @@ faq:
     answer: "A professional AI engineer applies standard software engineering discipline to AI components: they define the problem and success criteria before touching the model; treat evaluation as first-class work with test sets built before shipping; instrument inputs, outputs, latency, cost, and failure rates; roll out changes gradually with metrics that gate each step; close the feedback loop by feeding user signals back into evaluation; version prompts, model upgrades, and experiment results the same way code changes are tracked; and design for risk from the start—prompt injection, garbage outputs, and compliance are part of the architecture, not afterthoughts."
   - question: "How is building AI for production different from a personal project?"
     answer: "A hobbyist approach—build it, run it, see if it works, adjust—is fine for personal projects. But once AI is integrated into a product that other people rely on, that is not enough. What distinguishes a professional AI engineer is not familiarity with a particular model or framework; it is the discipline to build, ship, and operate AI features with the same rigor applied to any production system."
+youtubeVideo:
+  id: "HJqk2VVm-S8"
+  title: "A Day of AI Engineer"
+  description: "My session where I define the AI engineer role from my point of view and walk through what it takes to ship AI-powered features from prototype to production."
 ---
 
 Over the past year, titles like "AI Engineer" and "GenAI Engineer" have appeared much more frequently on job boards and LinkedIn profiles, but without a commonly accepted definition behind them.
