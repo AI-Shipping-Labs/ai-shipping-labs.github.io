@@ -93,6 +93,36 @@ export default async function BlogPostPage({ params }: PageProps) {
               )}
             </header>
 
+            {post.youtubeVideo && (
+              <figure className="not-prose my-12 rounded-lg border border-border bg-card/30 p-4">
+                <div className="aspect-video w-full overflow-hidden rounded-lg border border-border bg-black">
+                  <iframe
+                    className="h-full w-full"
+                    src={`https://www.youtube.com/embed/${post.youtubeVideo.id}`}
+                    title={post.youtubeVideo.title}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                  />
+                </div>
+                <figcaption className="mt-4 text-center text-sm italic text-muted-foreground/80 leading-relaxed">
+                  <strong className="font-semibold text-foreground not-italic">{post.youtubeVideo.title}</strong>
+                  {" — "}
+                  {post.youtubeVideo.description}
+                </figcaption>
+                {post.youtubeVideo.chapters && post.youtubeVideo.chapters.length > 0 && (
+                  <ul className="mt-4 list-inside list-none space-y-1 text-sm text-muted-foreground">
+                    {post.youtubeVideo.chapters.map((ch) => (
+                      <li key={ch.time}>
+                        <span className="font-medium text-foreground">{ch.time}</span>
+                        {" — "}
+                        {ch.label}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </figure>
+            )}
+
             <div 
               className="prose prose-invert prose-lg max-w-none
                 prose-headings:font-semibold prose-headings:tracking-tight
