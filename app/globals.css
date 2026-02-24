@@ -66,15 +66,23 @@
   }
 
   .prose h1 {
-    @apply text-3xl font-semibold tracking-tight mt-8 mb-4;
+    @apply text-3xl font-bold tracking-tight text-foreground mt-12 mb-5;
   }
 
   .prose h2 {
-    @apply text-2xl font-semibold tracking-tight mt-8 mb-4;
+    @apply text-2xl font-semibold tracking-tight text-foreground mt-12 mb-4;
   }
 
   .prose h3 {
-    @apply text-xl font-semibold tracking-tight mt-6 mb-3;
+    @apply text-xl font-semibold tracking-tight text-foreground mt-10 mb-3;
+  }
+
+  .prose h4 {
+    @apply text-lg font-semibold tracking-tight text-foreground mt-8 mb-2;
+  }
+
+  .prose h5 {
+    @apply text-xs font-semibold uppercase tracking-widest text-accent mt-6 mb-2;
   }
 
   .prose p {
@@ -120,5 +128,18 @@
 
   .prose figcaption {
     @apply text-center text-sm italic text-muted-foreground/80 mt-4 leading-relaxed;
+  }
+
+  /* Styled prompt block for blog articles */
+  .prose .prompt-callout {
+    @apply my-8 rounded-lg border border-border overflow-hidden bg-card/50;
+  }
+
+  .prose .prompt-callout-label {
+    @apply block border-b border-border bg-secondary/50 px-4 py-2.5 text-xs font-semibold uppercase tracking-wider text-accent;
+  }
+
+  .prose .prompt-callout-content {
+    @apply m-0 whitespace-pre-wrap break-words p-4 font-mono text-sm leading-relaxed text-muted-foreground;
   }
 }
