@@ -5,6 +5,13 @@ import { remark } from "remark"
 import html from "remark-html"
 
 const postsDirectory = path.join(process.cwd(), "content/blog")
+const includesDirectory = path.join(process.cwd(), "content/includes")
+const promptsDirectory = path.join(process.cwd(), "content/includes/prompts")
+
+interface FaqItem {
+  question: string
+  answer: string
+}
 
 export interface Post {
   slug: string
@@ -14,6 +21,7 @@ export interface Post {
   tags?: string[]
   readingTime?: string
   contentHtml: string
+  faq?: FaqItem[]
 }
 
 export interface PostMeta {
@@ -30,6 +38,45 @@ function calculateReadingTime(content: string): string {
   const words = content.split(/\s+/).length
   const minutes = Math.ceil(words / wordsPerMinute)
   return `${minutes} min read`
+}
+
+function escapeHtml(s: string): string {
+  return s
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;")
+}
+
+function renderPromptBlock(body: string): string {
+  const trimmed = body.trim()
+  const escaped = escapeHtml(trimmed)
+  return `<div class="prompt-callout" role="region" aria-label="Prompt"><span class="prompt-callout-label">Prompt</span><pre class="prompt-callout-content">${escaped}</pre></div>`
+}
+
+/** Resolve {% include name %} with content from content/includes/<name>.md */
+function resolveIncludes(raw: string): string {
+  const includeRe = /\{%\s*include\s+([\w/-]+)\s*%\}/g
+  let result = raw.replace(includeRe, (_, name: string) => {
+    const base = name.replace(/\/$/, "")
+    const mdPath = path.join(includesDirectory, `${base}.md`)
+    if (!fs.existsSync(mdPath)) return `{% include ${name} %}`
+    return fs.readFileSync(mdPath, "utf8").trim()
+  })
+  // Resolve {% prompt %}...{% endprompt %} with a styled HTML block (prompt specified in the article)
+  const inlinePromptRe = /\{%\s*prompt\s*%\}([\s\S]*?)\{%\s*endprompt\s*%\}/g
+  result = result.replace(inlinePromptRe, (_, body: string) => renderPromptBlock(body))
+
+  // Resolve {% prompt name %} with content from content/includes/prompts/<name>.md (same styled block)
+  const promptRe = /\{%\s*prompt\s+([\w/-]+)\s*%\}/g
+  result = result.replace(promptRe, (_, name: string) => {
+    const base = name.trim().replace(/\/$/, "")
+    const mdPath = path.join(promptsDirectory, `${base}.md`)
+    if (!fs.existsSync(mdPath)) return `{% prompt ${base} %}`
+    return renderPromptBlock(fs.readFileSync(mdPath, "utf8"))
+  })
+  return result
 }
 
 export async function getAllPosts(): Promise<PostMeta[]> {
@@ -75,11 +122,12 @@ export async function getPostBySlug(slug: string): Promise<Post | null> {
 
   const fileContents = fs.readFileSync(fullPath, "utf8")
   const { data, content } = matter(fileContents)
+  const contentWithIncludes = resolveIncludes(content)
 
   // Convert markdown to HTML (allow raw HTML passthrough)
   const processedContent = await remark()
     .use(html, { sanitize: false })
-    .process(content)
+    .process(contentWithIncludes)
   const contentHtml = processedContent.toString()
 
   return {
@@ -90,5 +138,6 @@ export async function getPostBySlug(slug: string): Promise<Post | null> {
     tags: data.tags || [],
     readingTime: calculateReadingTime(content),
     contentHtml,
+    faq: (data.faq as FaqItem[]) || [],
   }
 }

@@ -14,3 +14,6 @@ node_modules/
 
 # Next.js build output (not needed for static export - generated automatically)
 out/
+
+# pnpm local store (package cache, not project code)
+.pnpm-store/

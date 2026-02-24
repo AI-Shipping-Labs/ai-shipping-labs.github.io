@@ -4,6 +4,7 @@ import { ArrowLeft, Calendar, Clock } from "lucide-react"
 import { Header } from "@/components/landing/header"
 import { Footer } from "@/components/landing/footer"
 import { getPostBySlug, getAllPosts } from "@/lib/blog"
+import { FaqAccordion } from "@/components/blog/faq-accordion"
 
 interface PageProps {
   params: Promise<{ slug: string }>
@@ -112,6 +113,21 @@ export default async function BlogPostPage({ params }: PageProps) {
             />
           </div>
         </article>
+        {post.faq && post.faq.length > 0 && (
+          <section className="border-t border-border bg-background/40">
+            <div className="mx-auto max-w-3xl px-6 py-12 lg:px-8 lg:py-16">
+              <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
+                FAQ
+              </h2>
+              <p className="mt-2 text-sm text-muted-foreground">
+                Common questions about this article&apos;s topic.
+              </p>
+              <div className="mt-6">
+                <FaqAccordion items={post.faq} />
+              </div>
+            </div>
+          </section>
+        )}
       </main>
       <Footer />
     </>
