@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { ArrowRight, Calendar, Clock } from "lucide-react"
+import { ArrowRight, Calendar, Clock, User } from "lucide-react"
 import { Header } from "@/components/landing/header"
 import { Footer } from "@/components/landing/footer"
 import { getAllPosts } from "@/lib/blog"
@@ -58,6 +58,12 @@ export default async function BlogPage() {
                             {post.description}
                           </p>
                           <div className="mt-4 flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
+                            {post.author && (
+                              <span className="flex items-center gap-1.5">
+                                <User className="h-4 w-4" />
+                                {post.author}
+                              </span>
+                            )}
                             <span className="flex items-center gap-1.5">
                               <Calendar className="h-4 w-4" />
                               {new Date(post.date).toLocaleDateString("en-US", {
