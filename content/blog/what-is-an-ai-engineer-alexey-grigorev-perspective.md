@@ -1,5 +1,5 @@
 ---
-title: "What Is an AI Engineer? Alexey Grigorev's Experience-Based Definition"
+title: "What Is an AI Engineer? Experience-Based Definition"
 description: "A practical definition of the AI engineer role: what they do, how they differ from ML engineers and data scientists, and what it takes to ship AI-powered features from prototype to production."
 date: "2026-02-23"
 tags: ["ai-engineering", "ml-engineering", "careers", "llm"]
