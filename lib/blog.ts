@@ -31,6 +31,7 @@ export interface Post {
   description: string
   date: string
   tags?: string[]
+  author?: string
   readingTime?: string
   contentHtml: string
   faq?: FaqItem[]
@@ -43,6 +44,7 @@ export interface PostMeta {
   description: string
   date: string
   tags?: string[]
+  author?: string
   readingTime?: string
 }
 
@@ -113,6 +115,7 @@ export async function getAllPosts(): Promise<PostMeta[]> {
         description: data.description || "",
         date: data.date || new Date().toISOString(),
         tags: data.tags || [],
+        author: data.author,
         readingTime: calculateReadingTime(content),
       }
     })
@@ -149,6 +152,7 @@ export async function getPostBySlug(slug: string): Promise<Post | null> {
     description: data.description || "",
     date: data.date || new Date().toISOString(),
     tags: data.tags || [],
+    author: data.author,
     readingTime: calculateReadingTime(content),
     contentHtml,
     faq: (data.faq as FaqItem[]) || [],
