@@ -59,6 +59,11 @@ export function Header() {
                     Curated Links
                   </Link>
                 </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link href="/ai-engineer-learning-path" className="cursor-pointer">
+                    AI Engineer Learning Path
+                  </Link>
+                </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
           </div>
@@ -139,6 +144,13 @@ export function Header() {
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Curated Links
+                </Link>
+                <Link
+                  href="/ai-engineer-learning-path"
+                  className="block py-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  AI Engineer Learning Path
                 </Link>
               </div>
             </div>
