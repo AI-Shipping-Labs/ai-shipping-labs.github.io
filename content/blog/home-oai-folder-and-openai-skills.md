@@ -1,16 +1,10 @@
 ---
-title: "`/home/oai/` Folder, ChatGPT, and OpenAI Skills"
-description: "What the /home/oai/ folder in ChatGPT actually is, why it's not leaked infrastructure, and how it fits into the emerging agent skills standard."
+title: "Inside ChatGPT’s /home/oai/ Folder: Not a Data Leak, but OpenAI’s Hidden Skills System"
+description: "I unpacked the mysterious /home/oai/ directory that ChatGPT can zip on command and found not leaked OpenAI infrastructure, but a sandbox of document, slide, and spreadsheet “skills” that reveals how the new cross-vendor agent skills standard works in practice."
 date: "2026-02-10"
 tags: ["ai-agents", "skills", "openai", "infrastructure", "tooling-architecture"]
 author: "Alexey Grigorev"
 ---
-
-### 2. `/home/oai/` Folder from ChatGPT and OpenAI Skills
-
-![](https://substackcdn.com/image/fetch/$s_!5RkQ!,w_720,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6884b348-d29f-455a-808e-6d9a8ede1261_1080x1028.jpeg)
-
-![](https://substackcdn.com/image/fetch/$s_!fxf6!,w_720,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F472629e2-23b9-4fbf-959b-e44f02117e0f_1080x1552.jpeg)
 
 I saw a [post on X](https://x.com/vasuman/status/1999551563484762449?s=20) where someone shared a screenshot showing that this prompt works in ChatGPT and returns an archive of `/home/oai/`:
 
@@ -18,9 +12,19 @@ I saw a [post on X](https://x.com/vasuman/status/1999551563484762449?s=20) where
 
 They did not inspect the contents, only noted that the prompt worked. People on Reddit [claimed](https://www.reddit.com/r/ChatGPT/comments/1pmb47u/removed_by_reddit/) that this behavior indicated that ChatGPT was leaking internal OpenAI infrastructure. That’s not true.
 
-I tried the same thing and it worked for me as well. After that, I looked at the contents of this directory.
+I tried the same thing and it worked for me as well.
 
-The `/home/oai/` directory is a sandboxed execution environment used for tool execution, mainly for document creation and conversion. It is not part of OpenAI’s internal production infrastructure.
+<figure>
+  <img
+    src="https://substackcdn.com/image/fetch/$s_!5RkQ!,w_720,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6884b348-d29f-455a-808e-6d9a8ede1261_1080x1028.jpeg"
+    alt="ChatGPT interface showing a prompt to create a zip of the /home/oai/ directory"
+    loading="lazy"
+  />
+  <figcaption>Screenshot of the ChatGPT prompt that zips the `/home/oai/` directory</figcaption>
+</figure>
+
+
+After that, I looked at the contents of this directory. The `/home/oai/` directory is a sandboxed execution environment used for tool execution, mainly for document creation and conversion. It is not part of OpenAI’s internal production infrastructure.
 
 ```
 /home/oai/

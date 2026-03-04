@@ -1,5 +1,5 @@
 ---
-title: "How I Rebuilt My Website in 10 Minutes With AI"
+title: "How I Rebuilt My Personal Website in 10 Minutes With AI"
 description: "I hadn't updated my personal website since 2012. Using AI tools like Lovable and GitHub Copilot, I rebuilt it from scratch in under 10 minutes. Here's exactly how I did it and what I learned."
 date: "2025-12-05"
 tags: ["ai-tools", "web-development", "tutorial", "productivity"]

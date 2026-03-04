@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 import { ArrowRight, Calendar, Clock, User } from "lucide-react"
 import { Header } from "@/components/landing/header"
 import { Footer } from "@/components/landing/footer"
@@ -46,11 +47,22 @@ export default async function BlogPage() {
                 {posts.map((post) => (
                   <article
                     key={post.slug}
-                    className="group rounded-lg border border-border bg-card p-6 transition-colors hover:border-accent/50"
+                    className="group overflow-hidden rounded-lg border border-border bg-card transition-colors hover:border-accent/50"
                   >
                     <Link href={`/blog/${post.slug}`}>
-                      <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
-                        <div className="flex-1">
+                      <div className="flex flex-col gap-4 sm:flex-row sm:items-stretch sm:justify-between">
+                        {post.coverImage && (
+                          <div className="relative w-full overflow-hidden rounded-md border border-border/60 bg-muted/40 sm:w-48 sm:flex-shrink-0 sm:self-stretch">
+                            <Image
+                              src={post.coverImage}
+                              alt={post.title}
+                              width={384}
+                              height={216}
+                              className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                            />
+                          </div>
+                        )}
+                        <div className="flex-1 p-6">
                           <h2 className="text-xl font-semibold text-foreground group-hover:text-accent transition-colors">
                             {post.title}
                           </h2>
@@ -91,8 +103,8 @@ export default async function BlogPage() {
                               ))}
                             </div>
                           )}
+                          <ArrowRight className="mt-4 h-5 w-5 text-muted-foreground transition-transform group-hover:translate-x-1 group-hover:text-accent" />
                         </div>
-                        <ArrowRight className="h-5 w-5 text-muted-foreground transition-transform group-hover:translate-x-1 group-hover:text-accent" />
                       </div>
                     </Link>
                   </article>

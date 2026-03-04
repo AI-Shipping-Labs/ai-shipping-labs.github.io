@@ -23,6 +23,14 @@ export const COLLECTION_CATEGORIES: Record<
 /** Curated links to GitHub tools, models, courses, and other resources. */
 export const COLLECTION_ITEMS: CollectionItem[] = [
   {
+    id: "sphinx-ai",
+    title: "Sphinx",
+    description: "AI copilot for data science. One prompt runs the full workflow: EDA, cleaning, feature engineering, model selection and fitting, evaluation, and feature importance—in about 5 minutes. Free to get started.",
+    url: "https://www.sphinx.ai/",
+    category: "tools",
+    source: "sphinx.ai",
+  },
+  {
     id: "lovable",
     title: "Lovable",
     description: "AI-powered app builder. Design in the browser, export to GitHub.",
@@ -157,6 +165,14 @@ export const COLLECTION_ITEMS: CollectionItem[] = [
     url: "https://dlthub.com/docs/tutorial/fundamentals-course",
     category: "courses",
     source: "dlthub.com",
+  },
+  {
+    id: "freecodecamp-dlt-certification",
+    title: "FreeCodeCamp Course Certification: Data Engineering with Python and AI/LLMs – Data Loading Tutorial",
+    description: "Learn how to build modern, scalable data pipelines using Python and AI-assisted tools. This hands-on tutorial starts from the basics of data ingestion and takes you all the way to advanced techniques in data loading, transformation, deployment, and automation. By freeCodeCamp, featuring Alexey Grigoriev and Adrian Brudaru.",
+    url: "https://community.dlthub.com/course-freecodecamp-certification?utm_source=alexey_linkedin",
+    category: "courses",
+    source: "freeCodeCamp / dlthub",
   },
   {
     id: "ai-agents-email-crash-course",
