@@ -3,6 +3,7 @@ import { getAllPosts } from '@/lib/blog'
 import { getAllProjects } from '@/lib/projects'
 import { getAllTutorials } from '@/lib/tutorials'
 import { getAllResources } from '@/lib/resources'
+import { getAllCollectionIds } from '@/lib/collection'
 
 export const dynamic = 'force-static'
 
@@ -102,5 +103,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.6,
   }))
 
-  return [...baseRoutes, ...blogRoutes, ...projectRoutes, ...tutorialRoutes, ...resourceRoutes]
+  // Add collection resource pages (curated links → on-site docs)
+  const collectionIds = getAllCollectionIds()
+  const collectionRoutes: MetadataRoute.Sitemap = collectionIds.map((id) => ({
+    url: `${siteUrl}/collection/${id}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.6,
+  }))
+
+  return [...baseRoutes, ...blogRoutes, ...projectRoutes, ...tutorialRoutes, ...resourceRoutes, ...collectionRoutes]
 }

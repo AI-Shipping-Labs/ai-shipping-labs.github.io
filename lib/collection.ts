@@ -250,3 +250,13 @@ export function getCollectionByCategory(
 export function getAllCollectionCategories(): CollectionCategory[] {
   return ["tools", "models", "courses", "other"]
 }
+
+/** Get a single collection item by id (used as URL slug). */
+export function getCollectionItemById(id: string): CollectionItem | undefined {
+  return COLLECTION_ITEMS.find((item) => item.id === id)
+}
+
+/** All collection ids for static params and sitemap. */
+export function getAllCollectionIds(): string[] {
+  return COLLECTION_ITEMS.map((item) => item.id)
+}

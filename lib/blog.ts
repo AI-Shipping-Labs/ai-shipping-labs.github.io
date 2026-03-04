@@ -3,6 +3,7 @@ import path from "path"
 import matter from "gray-matter"
 import { remark } from "remark"
 import html from "remark-html"
+import { resolveCollectionLinks } from "@/lib/collection-links"
 
 const postsDirectory = path.join(process.cwd(), "content/blog")
 const includesDirectory = path.join(process.cwd(), "content/includes")
@@ -139,11 +140,12 @@ export async function getPostBySlug(slug: string): Promise<Post | null> {
   const fileContents = fs.readFileSync(fullPath, "utf8")
   const { data, content } = matter(fileContents)
   const contentWithIncludes = resolveIncludes(content)
+  const contentWithCollectionLinks = resolveCollectionLinks(contentWithIncludes)
 
   // Convert markdown to HTML (allow raw HTML passthrough)
   const processedContent = await remark()
     .use(html, { sanitize: false })
-    .process(contentWithIncludes)
+    .process(contentWithCollectionLinks)
   const contentHtml = processedContent.toString()
 
   return {

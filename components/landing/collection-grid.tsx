@@ -1,7 +1,8 @@
 "use client"
 
 import { useState } from "react"
-import { ExternalLink, Wrench, Cpu, GraduationCap, FolderOpen } from "lucide-react"
+import Link from "next/link"
+import { Wrench, Cpu, GraduationCap, FolderOpen } from "lucide-react"
 import {
   COLLECTION_ITEMS,
   COLLECTION_CATEGORIES,
@@ -19,13 +20,10 @@ const CATEGORY_ICONS: Record<CollectionCategory, React.ComponentType<{ className
 
 function CollectionCard({ item }: { item: CollectionItem }) {
   const Icon = CATEGORY_ICONS[item.category]
-  const isExternal = item.url.startsWith("http")
 
   return (
-    <a
-      href={item.url}
-      target={isExternal ? "_blank" : undefined}
-      rel={isExternal ? "noopener noreferrer" : undefined}
+    <Link
+      href={`/collection/${item.id}`}
       className="group flex flex-col rounded-xl border border-border bg-card p-6 transition-colors hover:border-accent/50"
     >
       <div className="flex flex-1 flex-col">
@@ -34,9 +32,6 @@ function CollectionCard({ item }: { item: CollectionItem }) {
             <Icon className="h-3.5 w-3.5" />
             {COLLECTION_CATEGORIES[item.category].label}
           </span>
-          {isExternal && (
-            <ExternalLink className="h-4 w-4 shrink-0 text-muted-foreground transition-colors group-hover:text-accent" />
-          )}
         </div>
         <h3 className="text-lg font-semibold text-foreground transition-colors group-hover:text-accent">
           {item.title}
@@ -46,7 +41,7 @@ function CollectionCard({ item }: { item: CollectionItem }) {
           <p className="mt-3 text-xs text-muted-foreground">{item.source}</p>
         )}
       </div>
-    </a>
+    </Link>
   )
 }
 

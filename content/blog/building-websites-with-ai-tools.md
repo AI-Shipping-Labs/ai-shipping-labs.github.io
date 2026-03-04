@@ -4,11 +4,12 @@ description: "I hadn't updated my personal website since 2012. Using AI tools li
 date: "2025-12-05"
 tags: ["ai-tools", "web-development", "tutorial", "productivity"]
 author: "Alexey Grigorev"
+collectionRefs: ["lovable", "cursor"]
 ---
 
 I haven't properly updated [my personal website](https://alexeygrigorev.com/) since 2012.
 
-Yesterday I tried a small experiment: I asked Lovable to generate a GitHub-style template for my homepage.
+Yesterday I tried a small experiment: I asked [[lovable]] to generate a GitHub-style template for my homepage.
 
 Surprisingly, the first iteration was already good enough.
 

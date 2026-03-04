@@ -75,7 +75,7 @@ This is a static Next.js application that serves as a landing page and content h
 - **Projects**: Project showcase listing and individual project pages
 - **Resources**: Resource articles listing and individual resource pages
 - **Tutorials**: Tutorial listing and individual tutorial pages
-- **Collection**: Collection page
+- **Collection**: Curated links (tools, models, courses) — each resource has its own on-site page at `/collection/[id]` with a “Visit source” external link and optional “Mentioned on this site” section for internal linking.
 
 ### Content Management
 
@@ -195,6 +195,16 @@ estimatedTime: "2 hours"
 ### Resources
 
 Located in `content/resources/`. Similar frontmatter structure as blog posts.
+
+### Curated collection and internal linking
+
+The **collection** (`lib/collection.ts`) defines curated resources (tools, models, courses). Each has an on-site doc page at `/collection/[id]` (e.g. `/collection/cursor`). The grid on `/collection` links to these pages; each resource page shows a “Visit source” button to the external URL.
+
+To drive **internal linking** and “Mentioned on this site” on a resource page:
+
+1. **Frontmatter** — In any blog post, tutorial, or project markdown, add `collectionRefs: ["cursor", "lovable"]` (use the resource `id` from `lib/collection.ts`).
+2. **Links in content** — Any link in the body to `/collection/[id]` (e.g. `[Cursor](/collection/cursor)`) is also detected, so the resource page will list that post under “Mentioned on this site”.
+3. **Short relative links** — In blog, tutorial, or project markdown you can write `[[collection-id]]` (e.g. `[[cursor]]`, `[[lovable]]`). This is converted to a link to `/collection/id` with the resource title as the link text, and the page is included in “Mentioned on this site”.
 
 ## Scripts
 

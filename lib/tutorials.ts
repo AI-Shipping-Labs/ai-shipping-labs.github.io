@@ -3,6 +3,7 @@ import path from "path"
 import matter from "gray-matter"
 import { remark } from "remark"
 import html from "remark-html"
+import { resolveCollectionLinks } from "@/lib/collection-links"
 
 const tutorialsDirectory = path.join(process.cwd(), "content/tutorials")
 
@@ -72,8 +73,9 @@ export async function getTutorialBySlug(slug: string): Promise<Tutorial | null> 
 
   const fileContents = fs.readFileSync(fullPath, "utf8")
   const { data, content } = matter(fileContents)
+  const contentWithCollectionLinks = resolveCollectionLinks(content)
 
-  const processedContent = await remark().use(html).process(content)
+  const processedContent = await remark().use(html).process(contentWithCollectionLinks)
   const contentHtml = processedContent.toString()
 
   return {
