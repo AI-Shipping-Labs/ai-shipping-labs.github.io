@@ -32,34 +32,36 @@ export function Header() {
           <Link href="/#tiers" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
             Membership
           </Link>
-          <DropdownMenu>
-            <DropdownMenuTrigger className="text-sm text-muted-foreground transition-colors hover:text-foreground flex items-center gap-1 outline-none">
-              Resources
-              <ChevronDown className="h-4 w-4" />
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="start" className="w-48">
-              <DropdownMenuItem asChild>
-                <Link href="/blog" className="cursor-pointer">
-                  Blog
-                </Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem asChild>
-                <Link href="/projects" className="cursor-pointer">
-                  Project Ideas
-                </Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem asChild>
-                <Link href="/event-recordings" className="cursor-pointer">
-                  Event Recordings
-                </Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem asChild>
-                <Link href="/collection" className="cursor-pointer">
-                  Curated Links
-                </Link>
-              </DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
+          <div suppressHydrationWarning>
+            <DropdownMenu>
+              <DropdownMenuTrigger className="text-sm text-muted-foreground transition-colors hover:text-foreground flex items-center gap-1 outline-none">
+                Resources
+                <ChevronDown className="h-4 w-4" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="start" className="w-48">
+                <DropdownMenuItem asChild>
+                  <Link href="/blog" className="cursor-pointer">
+                    Blog
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link href="/projects" className="cursor-pointer">
+                    Project Ideas
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link href="/event-recordings" className="cursor-pointer">
+                    Event Recordings
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link href="/collection" className="cursor-pointer">
+                    Curated Links
+                  </Link>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+          </div>
           <Link href="/#faq" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
             FAQ
           </Link>

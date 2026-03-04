@@ -130,6 +130,189 @@
     @apply text-center text-sm italic text-muted-foreground/80 mt-4 leading-relaxed;
   }
 
+  /* Role types comparison table for blog posts */
+  .prose .role-types-table-wrapper {
+    @apply my-8 mx-auto rounded-lg border border-border bg-card/40;
+    max-width: 52rem;
+    overflow-x: visible;
+  }
+
+  .prose .role-types-table {
+    @apply w-full text-sm leading-relaxed;
+    border-collapse: separate;
+    border-spacing: 0;
+  }
+
+  .prose .role-types-table caption {
+    @apply px-4 pt-3 pb-4 text-xs italic text-muted-foreground/80 text-center;
+    caption-side: bottom;
+  }
+
+  .prose .role-types-table thead {
+    background-color: hsl(var(--accent) / 0.08);
+  }
+
+  .prose .role-types-table th,
+  .prose .role-types-table td {
+    @apply px-3 py-2 text-left align-top;
+    border-bottom: 1px solid hsl(var(--border));
+  }
+
+  .prose .role-types-table th {
+    @apply text-xs font-semibold uppercase tracking-wide text-accent;
+  }
+
+  .prose .role-types-table td {
+    @apply text-muted-foreground;
+  }
+
+  .prose .role-types-table tbody tr:nth-child(even) {
+    background-color: hsl(var(--secondary) / 0.35);
+  }
+
+  /* Responsibility importance map for AI engineer role */
+  .prose .responsibilities-map {
+    @apply my-10 mx-auto rounded-lg border border-border bg-card/40 p-4 md:p-6;
+    max-width: 52rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    position: relative;
+  }
+
+  @media (min-width: 768px) {
+    .prose .responsibilities-map {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  /* Outer gridlines */
+  .prose .responsibilities-map::before {
+    content: '';
+    position: absolute;
+    inset: 0.75rem;
+    border-radius: calc(var(--radius) * 1.5);
+    border: 1px dashed hsl(var(--border) / 0.5);
+    pointer-events: none;
+  }
+
+  @media (min-width: 768px) {
+    .prose .responsibilities-map::after {
+      content: '';
+      position: absolute;
+      top: 0.75rem;
+      bottom: 0.75rem;
+      left: calc(100% / 3);
+      width: 1px;
+      background: hsl(var(--border) / 0.5);
+      box-shadow: calc(100% / 3) 0 0 hsl(var(--border) / 0.5);
+      pointer-events: none;
+    }
+  }
+
+  .prose .responsibilities-map-group {
+    @apply relative rounded-lg bg-background/80 p-3 md:p-4;
+  }
+
+  .prose .responsibilities-map-group h4 {
+    @apply text-xs font-semibold uppercase tracking-[0.16em] text-accent mb-1.5;
+  }
+
+  .prose .responsibilities-map-group p {
+    @apply mt-0 text-[11px] leading-relaxed text-muted-foreground;
+  }
+
+  .prose .responsibilities-map-chips {
+    margin-top: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .prose .responsibility-chip {
+    @apply rounded-md border border-border/70 bg-background/90 px-3 py-2;
+  }
+
+  .prose .responsibility-chip-text {
+    @apply m-0 text-xs leading-snug text-muted-foreground;
+  }
+
+  .prose .responsibilities-map-group--core .responsibility-chip {
+    @apply border-accent/70 bg-accent/10;
+  }
+
+  .prose .responsibilities-map-group--core .responsibility-chip-text {
+    @apply text-[13px];
+  }
+
+  .prose .responsibilities-map-group--common .responsibility-chip {
+    @apply border-border/70 bg-background/80;
+  }
+
+  .prose .responsibilities-map-group--secondary .responsibility-chip {
+    @apply border-border/60 bg-background/70;
+    opacity: 0.9;
+  }
+
+  /* Use cases prominence map */
+  .prose .use-cases-map {
+    @apply my-10 mx-auto rounded-lg border border-border bg-card/40 p-4 md:p-6;
+    max-width: 52rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .prose .use-cases-map-row {
+    --usecase-weight: 1;
+    position: relative;
+    padding: 0.5rem 0;
+  }
+
+  .prose .use-cases-map-row + .use-cases-map-row {
+    border-top: 1px dashed hsl(var(--border) / 0.6);
+  }
+
+  .prose .use-cases-map-bar {
+    position: relative;
+    @apply rounded-md bg-background/80 border border-border/70 overflow-hidden;
+  }
+
+  .prose .use-cases-map-bar::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(
+      to right,
+      hsl(var(--accent) / 0.1),
+      hsl(var(--accent) / 0.5)
+    );
+    width: calc(var(--usecase-weight) / 15.4 * 100%);
+    max-width: 100%;
+  }
+
+  .prose .use-cases-map-bar-fill {
+    display: none;
+  }
+
+  .prose .use-cases-map-bar-content {
+    position: relative;
+    @apply flex items-center justify-between gap-2 px-3 py-2;
+  }
+
+  .prose .use-cases-map-name {
+    @apply text-xs font-medium text-foreground;
+  }
+
+  .prose .use-cases-map-meta {
+    @apply text-[11px] text-muted-foreground;
+    white-space: nowrap;
+  }
+
+  .prose .use-cases-map-description {
+    @apply mt-1.5 text-[11px] leading-relaxed text-muted-foreground;
+  }
+
   /* Styled prompt block for blog articles */
   .prose .prompt-callout {
     @apply my-8 rounded-lg border border-border overflow-hidden bg-card/50;
