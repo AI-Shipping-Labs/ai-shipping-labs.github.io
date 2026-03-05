@@ -354,10 +354,15 @@ export default function AIEngineerLearningPath() {
           </Link>
 
           <div className="max-w-3xl">
-            <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/5 px-4 py-1.5 text-sm text-accent">
+            <a
+              href="https://aishippinglabs.com/blog/what-is-an-ai-engineer-based-on-job-descriptions"
+              target="_blank"
+              rel="noreferrer"
+              className="mb-4 inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/5 px-4 py-1.5 text-sm text-accent transition-colors hover:bg-accent/10"
+            >
               <Briefcase className="h-3.5 w-3.5" />
               Based on 1,000+ job descriptions · January 2026
-            </div>
+            </a>
             <h1 className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
               AI Engineer Learning Path
             </h1>
@@ -368,18 +373,29 @@ export default function AIEngineerLearningPath() {
           </div>
 
           {/* Key stats */}
-          <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-4">
-            {[
-              { value: "95.6%", label: "Production-focused roles" },
-              { value: "82.5%", label: "Require Python" },
-              { value: "35.9%", label: "Mention RAG" },
-              { value: "~70%", label: "Are AI-first roles" },
-            ].map((stat) => (
-              <div key={stat.label} className="rounded-xl border border-border bg-card/40 p-4 text-center">
-                <div className="text-2xl font-bold text-accent">{stat.value}</div>
-                <div className="mt-1 text-xs text-muted-foreground">{stat.label}</div>
-              </div>
-            ))}
+          <div className="mt-10">
+            <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
+              {[
+                { value: "95.6%", label: "Production-focused roles" },
+                { value: "82.5%", label: "Require Python" },
+                { value: "35.9%", label: "Mention RAG" },
+                { value: "~70%", label: "Are AI-first roles" },
+              ].map((stat) => (
+                <div key={stat.label} className="rounded-xl border border-border bg-card/40 p-4 text-center">
+                  <div className="text-2xl font-bold text-accent">{stat.value}</div>
+                  <div className="mt-1 text-xs text-muted-foreground">{stat.label}</div>
+                </div>
+              ))}
+            </div>
+            <div className="mt-4">
+              <Link
+                href="/blog/what-is-an-ai-engineer-based-on-job-descriptions"
+                className="inline-flex items-center gap-2 text-sm text-accent transition-colors hover:text-accent/80"
+              >
+                Read the full analysis
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
           </div>
         </div>
       </section>

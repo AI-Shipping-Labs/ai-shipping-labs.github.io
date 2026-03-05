@@ -40,10 +40,10 @@ export const metadata: Metadata = {
     description: 'An invite-only community for action-oriented builders who want to turn AI ideas into real projects.',
     images: [
       {
-        url: '/og-image.png', // You'll need to create this image
+        url: '/AI_Shipping_Labs__2_-c8ae9619-39f5-4882-896b-19b2869b8a58.png',
         width: 1200,
         height: 630,
-        alt: 'AI Shipping Labs - Turn AI ideas into real projects',
+        alt: 'AI Shipping Labs — Turn AI ideas into real projects',
       },
     ],
   },
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'AI Shipping Labs | A Technical Community',
     description: 'An invite-only community for action-oriented builders who want to turn AI ideas into real projects.',
-    images: ['/og-image.png'], // You'll need to create this image
+    images: ['/AI_Shipping_Labs__2_-c8ae9619-39f5-4882-896b-19b2869b8a58.png'],
     creator: '@alexeygrigorev', // Update with actual Twitter handle if available
   },
   robots: {
@@ -66,8 +66,8 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: '/favicon.ico',
-    apple: '/apple-touch-icon.png',
+    icon: '/logo.jpeg',
+    apple: '/logo.jpeg',
   },
   verification: {
     // Add verification codes when available
