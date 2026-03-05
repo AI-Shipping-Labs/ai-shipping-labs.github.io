@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     description: 'An invite-only community for action-oriented builders who want to turn AI ideas into real projects.',
     images: [
       {
-        url: '/logo.jpeg',
+        url: '/ai-shipping-labs.jpg',
         width: 1200,
         height: 630,
         alt: 'AI Shipping Labs — Turn AI ideas into real projects',
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'AI Shipping Labs | A Technical Community',
     description: 'An invite-only community for action-oriented builders who want to turn AI ideas into real projects.',
-    images: ['/logo.jpeg'],
+    images: ['/ai-shipping-labs.jpg'],
     creator: '@alexeygrigorev', // Update with actual Twitter handle if available
   },
   robots: {
