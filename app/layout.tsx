@@ -19,7 +19,7 @@ const dancingScript = Dancing_Script({
   variable: '--font-script',
 })
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://ai-shipping-labs.com'
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://aishippinglabs.com'
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     description: 'An invite-only community for action-oriented builders who want to turn AI ideas into real projects.',
     images: [
       {
-        url: '/AI_Shipping_Labs__2_-c8ae9619-39f5-4882-896b-19b2869b8a58.png',
+        url: '/logo.jpeg',
         width: 1200,
         height: 630,
         alt: 'AI Shipping Labs — Turn AI ideas into real projects',
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'AI Shipping Labs | A Technical Community',
     description: 'An invite-only community for action-oriented builders who want to turn AI ideas into real projects.',
-    images: ['/AI_Shipping_Labs__2_-c8ae9619-39f5-4882-896b-19b2869b8a58.png'],
+    images: ['/logo.jpeg'],
     creator: '@alexeygrigorev', // Update with actual Twitter handle if available
   },
   robots: {
