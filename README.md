@@ -147,7 +147,7 @@ The site is configured for static export and deploys to both GitHub Pages and AW
 
 ### AWS S3
 
-Deploys the `out/` directory to an S3 bucket using `aws s3 sync --delete`.
+Deploys the `out/` directory to an S3 bucket using `aws s3 sync --delete`, then invalidates the CloudFront cache.
 
 #### Required GitHub Secrets
 
@@ -155,10 +155,11 @@ Add these in repository Settings → Secrets and variables → Actions:
 
 | Secret | Description |
 |---|---|
-| `AWS_ACCESS_KEY_ID` | IAM access key with S3 write permissions |
+| `AWS_ACCESS_KEY_ID` | IAM access key with S3 and CloudFront permissions |
 | `AWS_SECRET_ACCESS_KEY` | IAM secret access key |
 | `AWS_REGION` | AWS region (e.g. `eu-west-1`) |
 | `AWS_S3_BUCKET` | S3 bucket name |
+| `CLOUDFRONT_DISTRIBUTION_ID` | CloudFront distribution ID for cache invalidation |
 
 ### Configuration
 
