@@ -62,7 +62,7 @@ This is a static Next.js application that serves as a landing page and content h
 ├── styles/                # Additional stylesheets
 └── .github/
     └── workflows/
-        └── deploy-pages.yml  # GitHub Pages deployment workflow
+        └── nextjs.yml        # Deployment workflow (GitHub Pages + S3)
 ```
 
 ## Features
@@ -138,19 +138,27 @@ npx serve out
 
 ## Deployment
 
-The site is configured for static export and deployed to GitHub Pages via GitHub Actions.
+The site is configured for static export and deploys to both GitHub Pages and AWS S3 via GitHub Actions. On push to `main`, the workflow (`.github/workflows/nextjs.yml`) builds the site once and deploys in parallel to both targets.
 
-### GitHub Pages Deployment
+### GitHub Pages
 
-1. The repository includes a GitHub Actions workflow (`.github/workflows/deploy-pages.yml`)
-2. On push to `main`, the workflow:
-   - Installs dependencies
-   - Builds the static site
-   - Deploys the `out/` directory to GitHub Pages
+1. One-time setup: go to repository Settings → Pages → set Source to "GitHub Actions"
+2. Deploys automatically on push to `main`
 
-3. One-time setup:
-   - Go to repository Settings → Pages
-   - Set Source to "GitHub Actions"
+### AWS S3
+
+Deploys the `out/` directory to an S3 bucket using `aws s3 sync --delete`.
+
+#### Required GitHub Secrets
+
+Add these in repository Settings → Secrets and variables → Actions:
+
+| Secret | Description |
+|---|---|
+| `AWS_ACCESS_KEY_ID` | IAM access key with S3 write permissions |
+| `AWS_SECRET_ACCESS_KEY` | IAM secret access key |
+| `AWS_REGION` | AWS region (e.g. `eu-west-1`) |
+| `AWS_S3_BUCKET` | S3 bucket name |
 
 ### Configuration
 
