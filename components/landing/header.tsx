@@ -60,8 +60,8 @@ export function Header() {
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
-                  <Link href="/ai-engineer-learning-path" className="cursor-pointer">
-                    AI Engineer Learning Path
+                  <Link href="/ai-engineer-resources" className="cursor-pointer">
+                    AI Engineer Resources
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
@@ -151,11 +151,11 @@ export function Header() {
                   Curated Links
                 </Link>
                 <Link
-                  href="/ai-engineer-learning-path"
+                  href="/ai-engineer-resources"
                   className="block py-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  AI Engineer Learning Path
+                  AI Engineer Resources
                 </Link>
                 <Link
                   href="/courses"
