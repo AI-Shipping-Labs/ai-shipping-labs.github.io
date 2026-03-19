@@ -178,7 +178,7 @@ export const COLLECTION_ITEMS: CollectionItem[] = [
     id: "ai-agents-email-crash-course",
     title: "AI Agents Email Crash-Course (Cohort Edition)",
     description: "Free cohort-based version running December and January. Complete the project and review three other submissions to receive a certificate of completion signed by Alexey.",
-    url: "https://alexeygrigorev.com/courses.html",
+    url: "https://alexeygrigorev.com/aihero/",
     category: "courses",
     source: "alexeygrigorev.com",
   },
@@ -201,16 +201,27 @@ export const COLLECTION_ITEMS: CollectionItem[] = [
   {
     id: "agentic-ai-crash-course",
     title: "Agentic AI Crash Course",
-    description: "Free introductory crash course on how modern AI agents work in practice: tools, RAG, memory, planning, MCP, and multi-agent systems. Focus on real-world system design and limitations.",
-    url: "https://www.deeplearning.ai/courses/agentic-ai/",
+    description:
+      "A free introductory crash course on agentic AI that explains how modern AI agents work in practice, from tools and RAG to memory, planning, MCP, and multi-agent systems. Designed as a clear, realistic starting point focused on real-world system design and limitations rather than hype.",
+    url: "https://github.com/aishwaryanr/awesome-generative-ai-guide/tree/main/free_courses/agentic_ai_crash_course",
     category: "courses",
-    source: "DeepLearning.AI",
+    source: "GitHub",
   },
   {
     id: "cs146s-modern-software-developer",
     title: "Assignments for CS146S: The Modern Software Developer",
-    description: "Programming assignments for Stanford's CS146S (Fall 2025): AI-assisted software development with modern tooling—LLM-based coding, testing, and documentation.",
-    url: "https://github.com/mihail911/modern-software-dev-assignments",
+    description:
+      "Programming assignments for CS146S: The Modern Software Developer (Stanford University), focused on AI-assisted software development. Includes hands-on work with modern tooling and workflows like LLM-based coding, testing, and documentation (Fall 2025).",
+    url: "https://github.com/mihail911/modern-software-dev-assignments?tab=readme-ov-file",
+    category: "courses",
+    source: "GitHub",
+  },
+  {
+    id: "data-engineering-zoomcamp",
+    title: "Data Engineering Zoomcamp",
+    description:
+      "New cohort starts on January 12, 2026. A free 9-week course on building production-ready data pipelines: ingestion, orchestration, warehousing, analytics, and more.",
+    url: "https://github.com/DataTalksClub/data-engineering-zoomcamp",
     category: "courses",
     source: "GitHub",
   },
@@ -252,6 +263,105 @@ export const COLLECTION_ITEMS: CollectionItem[] = [
     description: "Curated collection of AI agent use cases across healthcare, finance, education, retail, and more. Maps practical applications to open-source implementations and frameworks (CrewAI, AutoGen, Agno, LangGraph). Hands-on inspiration hub for builders and practitioners.",
     url: "https://github.com/ashishpatel26/500-AI-Agents-Projects",
     category: "other",
+    source: "GitHub",
+  },
+  {
+    id: "paperbanana",
+    title: "PaperBanana",
+    description:
+      "Agentic framework that automates publication-ready methodology diagrams and statistical plots directly from paper text, references, or rough sketches—optimized for scientific accuracy and visual consistency.",
+    url: "https://github.com/dwzhu-pku/PaperBanana",
+    category: "tools",
+    source: "GitHub",
+  },
+  {
+    id: "dexter-financial-research-agent",
+    title: "Dexter",
+    description:
+      "Autonomous financial research agent that plans, executes, and validates analysis using real-time market data, with safety features like loop detection and step limits.",
+    url: "https://github.com/virattt/dexter",
+    category: "tools",
+    source: "GitHub",
+  },
+  {
+    id: "pro-workflow",
+    title: "Pro Workflow",
+    description:
+      "Battle-tested AI coding practices for Claude Code and Cursor to keep an effective 80/20 AI-to-review ratio using disciplined context management and intentional review rituals.",
+    url: "https://github.com/rohitg00/pro-workflow",
+    category: "tools",
+    source: "GitHub",
+  },
+  {
+    id: "openclaw-persistent-assistant",
+    title: "You Could've Invented OpenClaw",
+    description:
+      "Tutorial by Nader Dabit for building a persistent AI assistant from scratch (starting with a Telegram bot + Anthropic API) and iteratively adding sessions, memory, tool use, and scheduled tasks.",
+    url: "https://gist.github.com/dabit3/bc60d3bea0b02927995cd9bf53c3db32",
+    category: "courses",
+    source: "Gist",
+  },
+  {
+    id: "cs336-language-modeling-from-scratch",
+    title: "CS336: Language Modeling from Scratch",
+    description:
+      "Implementation-heavy Stanford course that walks through building a language model end to end: data processing and tokenization, training, systems optimization, scaling laws, and alignment. Includes Python lecture scripts and slides, five programming assignments with public leaderboards, handouts, starter code, and the full schedule.",
+    url: "https://stanford-cs336.github.io/spring2025/",
+    category: "courses",
+    source: "Stanford University",
+  },
+  {
+    id: "planning-with-files",
+    title: "planning-with-files",
+    description:
+      "Claude Code skill that turns long, complex tasks into a file-based workflow using persistent Markdown files. Stores plans, progress, and errors on disk to reduce goal drift and repeated mistakes across many tool calls or sessions.",
+    url: "https://github.com/othmanadi/planning-with-files",
+    category: "tools",
+    source: "GitHub",
+  },
+  {
+    id: "claude-codex-file-based-debugging-skill",
+    title: "CLAUDE_CODEX_SKILL",
+    description:
+      "Workflow showing how to use the OpenAI Codex CLI for deep, non-interactive debugging via a file-based question-and-answer process: write a detailed problem description and full code context into a file, then let Codex produce a structured written analysis.",
+    url: "https://gist.github.com/antirez/2e07727fb37e7301247e568b6634beff",
+    category: "tools",
+    source: "Gist",
+  },
+  {
+    id: "a-day-of-an-ai-engineer-talk-materials",
+    title: "Materials from my talk, \"A Day of an AI Engineer\"",
+    description:
+      "Practical resource that combines a live webinar recording with the full planned write-up and a demo project. It also compares the AI Engineer role to traditional data team roles and maps modern AI projects to CRISP-DM.",
+    url: "https://docs.google.com/document/d/1fmm_DQyuZbiaViGqVVkgaET1wLjMdRz3m-ghPFnPgf8/edit?tab=t.0",
+    category: "other",
+    source: "Google Docs",
+  },
+  {
+    id: "locality-sensitive-hashing-illustrated-guide",
+    title: "Locality Sensitive Hashing: The Illustrated Guide",
+    description:
+      "In-depth tutorial from Pinecone's FAISS learning series that covers LSH (theory + Python implementation) for approximate nearest-neighbor search.",
+    url: "https://www.pinecone.io/learn/series/faiss/locality-sensitive-hashing/",
+    category: "other",
+    source: "Pinecone",
+  },
+  {
+    id: "atomic-agents",
+    title: "Atomic Agents",
+    description:
+      "Lightweight, modular framework for building AI agent pipelines emphasizing atomic, single-purpose components that are reusable, composable, and predictable (built on Instructor and Pydantic).",
+    url: "https://github.com/BrainBlend-AI/atomic-agents",
+    category: "tools",
+    source: "GitHub",
+  },
+  {
+    id: "gas-town",
+    title: "Gas Town",
+    description:
+      "Orchestration system for managing multiple Claude Code instances simultaneously. Coordinates parallel tasks, tracks work across agent instances, manages merge queues, and keeps persistent agent identities (tmux-based workflow).",
+    url: "https://github.com/steveyegge/gastown",
+    category: "tools",
     source: "GitHub",
   },
 ]
