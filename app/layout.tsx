@@ -1,5 +1,6 @@
 import React from "react"
-import type { Metadata } from 'next'
+import type { Metadata } from "next"
+import Script from "next/script"
 import { Inter, JetBrains_Mono, Dancing_Script } from 'next/font/google'
 
 import './globals.css'
@@ -101,6 +102,27 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable} ${dancingScript.variable}`}>
       <head>
+        <Script
+          id="mathjax-config"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.MathJax = {
+                tex: {
+                  inlineMath: [['\\\\(','\\\\)'], ['$', '$']],
+                  displayMath: [['\\\\[','\\\\]'], ['$$', '$$']],
+                  processEscapes: true
+                }
+              };
+            `,
+          }}
+        />
+        <Script
+          id="mathjax-script"
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+          strategy="afterInteractive"
+        />
+
         {/* Google tag (gtag.js) */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-HXSHF376NY"></script>
         <script
