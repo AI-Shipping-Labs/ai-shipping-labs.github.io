@@ -113,6 +113,7 @@ export function ExpandableQaList({
       {items.map((item, index) => {
         const key = keyForItem(item, index)
         const isOpen = Boolean(expanded[key])
+        const hasAnswer = item.answerHtml.trim().length > 0
         const clampClass =
           defaultPreviewLines === 2
             ? "line-clamp-2"
@@ -125,23 +126,27 @@ export function ExpandableQaList({
             key={key}
             className="rounded-lg border border-border bg-card/30 px-4 py-3"
           >
-            <button
-              type="button"
-              className="flex w-full items-start justify-between gap-4 text-left"
-              aria-expanded={isOpen}
-              onClick={() =>
-                setExpanded((prev) => ({ ...prev, [key]: !prev[key] }))
-              }
-            >
+            <div className="flex w-full items-start justify-between gap-4 text-left">
               <span className="text-base font-medium text-foreground">
                 {item.question}
               </span>
-              <span className="mt-0.5 text-muted-foreground">
-                {isOpen ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
-              </span>
-            </button>
+              {hasAnswer ? (
+                <button
+                  type="button"
+                  className="mt-0.5 text-muted-foreground"
+                  aria-expanded={isOpen}
+                  aria-label={isOpen ? "Collapse answer" : "Expand answer"}
+                  onClick={() =>
+                    setExpanded((prev) => ({ ...prev, [key]: !prev[key] }))
+                  }
+                >
+                  {isOpen ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
+                </button>
+              ) : null}
+            </div>
 
-            <div className="mt-2">
+            {hasAnswer ? (
+              <div className="mt-2">
               <div
                 className={cn(
                   "prose prose-invert max-w-none text-sm leading-relaxed text-muted-foreground",
@@ -165,7 +170,8 @@ export function ExpandableQaList({
                   {isOpen ? "Show less" : "Show more"}
                 </button>
               </div>
-            </div>
+              </div>
+            ) : null}
           </div>
         )
       })}

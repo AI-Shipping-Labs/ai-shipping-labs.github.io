@@ -3,6 +3,14 @@ import { ArrowRight, BookOpen, BrainCircuit } from "lucide-react"
 
 import { Header } from "@/components/landing/header"
 import { Footer } from "@/components/landing/footer"
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb"
 
 export const metadata = {
   title: "AI Engineer Resources | AI Shipping Labs",
@@ -17,6 +25,19 @@ export default function AiEngineerResourcesPage() {
         <section className="py-16 lg:py-24">
           <div className="mx-auto max-w-4xl px-6 lg:px-8">
             <div className="mb-12">
+              <Breadcrumb className="mb-6">
+                <BreadcrumbList>
+                  <BreadcrumbItem>
+                    <BreadcrumbLink asChild>
+                      <Link href="/">Home</Link>
+                    </BreadcrumbLink>
+                  </BreadcrumbItem>
+                  <BreadcrumbSeparator />
+                  <BreadcrumbItem>
+                    <BreadcrumbPage>AI Engineer Resources</BreadcrumbPage>
+                  </BreadcrumbItem>
+                </BreadcrumbList>
+              </Breadcrumb>
               <p className="inline-flex items-center gap-2 text-sm font-medium uppercase tracking-widest text-accent">
                 <BrainCircuit className="h-4 w-4" />
                 AI Engineer Resources
@@ -49,16 +70,16 @@ export default function AiEngineerResourcesPage() {
               </Link>
 
               <Link
-                href="/ai-engineer-interview-questions/llm"
+                href="/ai-engineer-interview-questions"
                 className="group rounded-lg border border-border bg-card/40 p-6 transition-colors hover:border-accent/50"
               >
                 <div className="flex items-start justify-between gap-4">
                   <div className="min-w-0">
                     <h2 className="text-xl font-semibold text-foreground group-hover:text-accent transition-colors">
-                      AI Engineer Interview Questions / LLM
+                      AI Engineer Interview Questions
                     </h2>
                     <p className="mt-2 text-sm text-muted-foreground line-clamp-2">
-                      60+ LLM interview questions with answers.
+                      Theory, coding, system design, behavioral, and take-home rounds.
                     </p>
                   </div>
                   <BookOpen className="h-5 w-5 text-muted-foreground transition-transform group-hover:translate-x-1 group-hover:text-accent" />
