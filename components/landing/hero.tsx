@@ -46,12 +46,13 @@ export function Hero() {
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
-            <Button 
-              variant="outline" 
-              size="lg" 
+            <Button
+              asChild
+              variant="outline"
+              size="lg"
               className="w-full border-border text-foreground hover:bg-secondary sm:w-auto bg-transparent"
             >
-              View Membership Tiers
+              <Link href="/#tiers">View Membership Tiers</Link>
             </Button>
           </div>
           
