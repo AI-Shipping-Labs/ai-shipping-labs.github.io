@@ -16,7 +16,16 @@ export function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-border bg-background/80 backdrop-blur-md">
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
+      <Link
+        href="/events/ai-shipping-labs-launch-recap"
+        className="flex items-center justify-center gap-2 border-b border-border/70 bg-accent/10 px-4 py-2 text-center text-xs font-medium text-foreground transition-colors hover:bg-accent/20 sm:text-sm"
+      >
+        <span className="h-1.5 w-1.5 rounded-full bg-accent" aria-hidden />
+        AI Shipping Labs launched - early members get extra onboarding benefits.
+        <span className="text-accent underline underline-offset-4">Read more</span>
+      </Link>
+
+      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3 lg:px-8">
         <Link href="/" className="flex items-center gap-2">
           <div className="h-8 w-8 rounded bg-accent" />
           <span className="text-lg font-semibold tracking-tight">AI Shipping Labs</span>

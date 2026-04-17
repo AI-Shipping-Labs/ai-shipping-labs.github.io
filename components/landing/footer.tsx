@@ -2,31 +2,31 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { CUSTOMER_PORTAL_URL } from "@/lib/stripe-links"
 
-export function Footer() {
+type FooterProps = {
+  showLaunchAnnouncement?: boolean
+}
+
+export function Footer({ showLaunchAnnouncement = true }: FooterProps) {
   return (
     <footer className="border-t border-border bg-card">
       <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8 lg:py-24">
-        <div className="mx-auto max-w-2xl">
-          <div className="rounded-2xl border border-border bg-background p-6 sm:p-8 text-center">
-            <h2 className="text-balance text-xl font-semibold tracking-tight sm:text-2xl">
-              Want to know when we launch?
-            </h2>
-            <p className="mt-3 text-sm text-muted-foreground">
-              Subscribe to the free newsletter and get the first ping when the community opens.
-            </p>
-            <div className="mt-6 flex justify-center">
-              <Button asChild className="bg-accent text-accent-foreground hover:bg-accent/90">
-                <a
-                  href="https://alexeyondata.substack.com/subscribe"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Subscribe to newsletter
-                </a>
-              </Button>
+        {showLaunchAnnouncement && (
+          <div className="mx-auto max-w-2xl">
+            <div className="rounded-2xl border border-border bg-background p-6 sm:p-8 text-center">
+              <h2 className="text-balance text-xl font-semibold tracking-tight sm:text-2xl">
+                AI Shipping Labs launched
+              </h2>
+              <p className="mt-3 text-sm text-muted-foreground">
+                Catch the launch recap and see what early members get while the community is still small.
+              </p>
+              <div className="mt-6 flex justify-center">
+                <Button asChild className="bg-accent text-accent-foreground hover:bg-accent/90">
+                  <Link href="/events/ai-shipping-labs-launch-recap">Open launch recap</Link>
+                </Button>
+              </div>
             </div>
           </div>
-        </div>
+        )}
 
         <div className="mt-16 grid gap-8 border-t border-border pt-8 sm:grid-cols-2">
           <div>

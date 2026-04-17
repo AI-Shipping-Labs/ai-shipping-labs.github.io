@@ -28,6 +28,24 @@ export default async function ResourcesPage() {
               </p>
             </div>
 
+            <article className="mb-10 rounded-xl border border-accent/30 bg-accent/5 p-6">
+              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-accent">Featured recap</p>
+              <h2 className="mt-2 text-2xl font-semibold tracking-tight text-foreground">
+                AI Shipping Labs Launch Stream Recap
+              </h2>
+              <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground">
+                See the key sections, main takeaways, and next steps from the launch event, including
+                explicit early-member benefits while the community is still small.
+              </p>
+              <Link
+                href="/events/ai-shipping-labs-launch-recap"
+                className="mt-5 inline-flex items-center gap-2 rounded-lg bg-accent px-4 py-2 text-sm font-semibold text-accent-foreground transition-colors hover:bg-accent/90"
+              >
+                Open recap page
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </article>
+
             {resources.length === 0 ? (
               <div className="rounded-lg border border-border bg-card p-12 text-center">
                 <Video className="mx-auto h-12 w-12 text-muted-foreground" />
