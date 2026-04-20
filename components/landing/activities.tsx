@@ -7,11 +7,7 @@ import {
   Video, 
   MessageCircleQuestion, 
   FileEdit, 
-  Eye, 
   BookOpen, 
-  Percent, 
-  FolderKanban, 
-  Trophy,
   Check,
   Users,
   Star,
@@ -36,12 +32,6 @@ const activities: Activity[] = [
     tiers: ["basic", "main", "premium"],
   },
   {
-    icon: Eye,
-    title: "Behind-the-Scenes Research",
-    description: "Get exclusive access to ongoing research and experiments. See work-in-progress findings and early-stage ideas not available publicly.",
-    tiers: ["basic", "main", "premium"],
-  },
-  {
     icon: FileEdit,
     title: "Curated Social Content Collection",
     description: "Never miss valuable educational posts again. Get a curated collection of evergreen social media content you can reference anytime.",
@@ -49,74 +39,32 @@ const activities: Activity[] = [
   },
   {
     icon: Users,
-    title: "Closed Community Access",
-    description: "Connect with action-oriented builders who are shipping practical AI products. Network with motivated peers, collaborate on projects, and learn from practitioners who convert ideas into tangible contributions.",
+    title: "Accountability Circles",
+    description: "Choose a project, join a sprint with a defined time frame, and work toward clear goals. Regular live check-ins create a stand-up rhythm where members share progress, blockers, and next steps while getting feedback on both execution and direction.",
     tiers: ["main", "premium"],
   },
   {
     icon: MessageCircleQuestion,
-    title: "Collaborative Problem-Solving & Mentorship",
-    description: "Get help with implementation challenges and complex issues. Learn from practitioners at various career stages and receive guidance on technical problems you're facing.",
+    title: "Group Learning",
+    description: "Pick a topic to research, a concept to understand better, or a tool to test in practice, then share findings with the community. This turns individual exploration into a shared internal knowledge base of tested tools, practical takeaways, and reusable patterns.",
     tiers: ["main", "premium"],
   },
   {
     icon: Video,
-    title: "Interactive Group Coding Sessions",
-    description: "Join sessions where community members and hosts code live, working through real problems. Watch, participate, and engage with comments as you learn.",
-    tiers: ["main", "premium"],
-  },
-  {
-    icon: FolderKanban,
-    title: "Guided Project-Based Learning",
-    description: "Get the structure and direction you need to make consistent progress. Follow curated project frameworks, share your progress with the community, and build practical AI products with clear milestones.",
-    tiers: ["main", "premium"],
-  },
-  {
-    icon: Trophy,
-    title: "Community Hackathons",
-    description: "Turn ideas into shipped projects through focused hackathons. Get gentle external pressure and accountability to build, share your work, and learn from other builders' approaches. Many members emerge from hackathons as active contributors.",
+    title: "Building Sessions",
+    description: "Live 1.5 to 2-hour interactive group coding sessions led by a host and held once or twice a month around real implementation questions. This is a working format, not a prepared webinar, where the group examines actual problems and practical trade-offs together.",
     tiers: ["main", "premium"],
   },
   {
     icon: Briefcase,
-    title: "Career Advancement Discussions",
-    description: "Discuss your career questions and get feedback from experienced practitioners in the community. Share experiences, get advice on job searches, interviews, and career growth.",
-    tiers: ["main", "premium"],
-  },
-  {
-    icon: Star,
-    title: "Personal Brand Development",
-    description: "Share your project results publicly and strengthen your professional presence. Get guidance on showcasing your work, building in public, and demonstrating real-world impact. Especially valuable for career transitioners and early career professionals.",
-    tiers: ["main", "premium"],
-  },
-  {
-    icon: Percent,
-    title: "Developer Productivity Tips & Workflows",
-    description: "Get tips, workflows, and best practices to boost your productivity as a developer. Learn techniques to work more efficiently and effectively.",
-    tiers: ["main", "premium"],
-  },
-  {
-    icon: FileEdit,
-    title: "Propose and Vote on Topics",
-    description: "Have a voice in the community's direction. Propose ideas and vote on future topics for content, workshops, and sessions.",
+    title: "Career Support",
+    description: "Focus on the practical career side of building with AI, including interviews, offers, salary questions, LinkedIn, GitHub, and how to present projects clearly. In a private community, conversations are more open and specific, with direct feedback on positioning, personal branding, and online presence.",
     tiers: ["main", "premium"],
   },
   {
     icon: BookOpen,
     title: "Mini-Courses on Specialized Topics",
     description: "Access all mini-courses covering specialized topics like Python for Data & AI Engineering, and more. The collection is regularly updated with new courses.",
-    tiers: ["premium"],
-  },
-  {
-    icon: FileEdit,
-    title: "Vote on Course Topics",
-    description: "Have a say in what gets taught next. Propose ideas and vote on upcoming mini-course topics to shape the curriculum.",
-    tiers: ["premium"],
-  },
-  {
-    icon: Users,
-    title: "Profile Teardowns",
-    description: "Get detailed feedback on your resume, LinkedIn, and GitHub profiles. Understand what works, what doesn't, and how to improve your professional presence.",
     tiers: ["premium"],
   },
 ]
@@ -277,7 +225,7 @@ export function Activities() {
                 </div>
                 <div>
                   <h4 className="font-semibold text-foreground">Main</h4>
-                  <p className="text-xs text-accent">Structure + accountability</p>
+                  <p className="text-xs text-accent">Everything in Basic + main community activities</p>
                 </div>
               </div>
               <ul className="space-y-2">

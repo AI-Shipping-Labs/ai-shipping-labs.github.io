@@ -3,41 +3,43 @@ import {
   ArrowRight,
   CalendarDays,
   Check,
-  CircleHelp,
   Clock3,
   ExternalLink,
   Mail,
-  Rocket,
   Target,
   Users,
   Video,
+  X,
 } from "lucide-react"
 import { Header } from "@/components/landing/header"
 import { Footer } from "@/components/landing/footer"
 import { getPaymentLink, type StripeTier } from "@/lib/stripe-links"
 
+type TierKey = "basic" | "main" | "premium"
+
+
 const keyTopics = [
   {
     title: "The core problem",
     summary:
-      "Most builders do not need more information. They need a system that helps them execute consistently.",
+      "The stream argued that many builders need more structure for execution, not more information.",
   },
   {
     title: "The learning model",
     summary:
-      "Learning by building: real projects expose gaps fast and create portfolio evidence you can show publicly.",
+      "The proposed model is learning by building. Real projects expose gaps quickly and produce concrete work.",
   },
   {
     title: "What members do",
     summary:
-      "A practical weekly rhythm: accountability circles, group learning, live builds, trend breakdowns, and career support.",
+      "The format described in the stream includes accountability circles, group learning, live sessions, trend breakdowns, and career support.",
   },
 ]
 
 const activities = [
   {
     title: "1. Accountability circles",
-    hook: "Build in sprints with shared momentum.",
+    hook: "Project-based sprints with regular check-ins.",
     details: [
       "Pick one project and commit to a defined sprint.",
       "Join regular live check-ins: progress, blockers, next steps.",
@@ -46,7 +48,7 @@ const activities = [
   },
   {
     title: "2. Group learning",
-    hook: "Turn solo research into shared leverage.",
+    hook: "Members research topics and share findings.",
     details: [
       "Research one concept, workflow, or tool in practice.",
       "Share findings with the community in a reusable format.",
@@ -55,7 +57,7 @@ const activities = [
   },
   {
     title: "3. Building sessions",
-    hook: "Live working sessions, not passive webinars.",
+    hook: "Live working sessions on implementation questions.",
     details: [
       "1.5 to 2-hour sessions once or twice per month.",
       "Topics come from member requests and real projects.",
@@ -64,7 +66,7 @@ const activities = [
   },
   {
     title: "4. Trend breakdowns",
-    hook: "Understand trends without chasing hype.",
+    hook: "Engineering breakdowns of current topics.",
     details: [
       "Break down one trending idea from an engineering lens.",
       "Focus on what it is, how it works, and where it is useful.",
@@ -73,7 +75,7 @@ const activities = [
   },
   {
     title: "5. Career support",
-    hook: "Get practical support for real career moves.",
+    hook: "Discussion of interviews, offers, LinkedIn, GitHub, and positioning.",
     details: [
       "Discuss interviews, offers, salary, LinkedIn, and GitHub.",
       "Learn how to present projects clearly to hiring teams.",
@@ -82,15 +84,7 @@ const activities = [
   },
 ]
 
-const earlyMemberFocusAreas = [
-  "Build a clearer learning path.",
-  "Start or improve a real project.",
-  "Prepare for a new role or interview process.",
-  "Grow faster in your current role.",
-  "Get unstuck and decide what to focus on next.",
-]
-
-const earlyMemberPlanSteps = [
+const onboardingPlanSteps = [
   "You get a short set of questions about your background, goals, and current situation.",
   "You can answer in writing or jump on a short live chat.",
   "Alexey reviews your context and prepares a personalized plan.",
@@ -128,42 +122,99 @@ const upcomingEvents = [
   },
 ]
 
+const tierOrder: TierKey[] = ["basic", "main", "premium"]
+
+const tierLabels: Record<TierKey, string> = {
+  basic: "Basic",
+  main: "Main",
+  premium: "Premium",
+}
+
+const recapCoverage = [
+  {
+    title: "Community activities from the recap",
+    description:
+      "Accountability circles, group learning, building sessions, trend breakdowns, and career support.",
+    tiers: ["main", "premium"] as TierKey[],
+  },
+  {
+    title: "Live sessions and collaborative environment",
+    description:
+      "Live sessions and the ongoing working format described in the stream.",
+    tiers: ["main", "premium"] as TierKey[],
+  },
+  {
+    title: "Early-member onboarding and personalized plan",
+    description:
+      "A short intake and onboarding plan while the group is still small.",
+    tiers: ["main", "premium"] as TierKey[],
+  },
+  {
+    title: "Courses shaped by member needs",
+    description: "Additional structured courses.",
+    tiers: ["premium"] as TierKey[],
+  },
+]
+
+const courseIdeas = [
+  "Python for AI Engineering",
+  "Specification-Driven Development for AI",
+  "Refactoring AI Slop",
+]
+
 const plans = [
   {
     name: "Basic",
     stripeKey: "basic" as StripeTier,
-    label: "Content only",
-    description: "Written summaries and selected topic breakdowns.",
-    bestFor: "Best if you want the material but do not need the live community layer yet.",
+    label: "Written resources only",
+    scope: "Written resources only.",
+    description:
+      "Includes event summaries and written breakdowns of selected topics.",
+    bestFor: "Does not include Slack, live sessions, group activities, or onboarding.",
+    features: [
+      "Premium written resources",
+      "Event summaries",
+      "Written breakdowns of selected topics",
+    ],
+    exclusions: [
+      "No Slack or collaborative environment",
+      "No live sessions or accountability circles",
+      "No early-member onboarding or personalized plan",
+    ],
+    cta: "Choose Basic",
   },
   {
     name: "Main",
     stripeKey: "main" as StripeTier,
-    label: "Most popular",
-    description: "Full community access: Slack, live sessions, circles, and group activities.",
-    bestFor: "Best if you want structure, accountability, and direct participation in the community.",
+    label: "Community access",
+    scope: "Covers the formats described in this recap.",
+    description:
+      "Includes Slack, accountability circles, group activities, live sessions, and onboarding while available.",
+    bestFor: "This is the tier that matches the recap content.",
+    features: [
+      "Slack and community access",
+      "Accountability circles and group activities",
+      "Live sessions, feedback loops, and early-member onboarding",
+    ],
+    cta: "Join Main community",
   },
   {
     name: "Premium",
     stripeKey: "premium" as StripeTier,
-    label: "Deepest support",
-    description: "Community access plus deeper structured courses shaped by member needs.",
-    bestFor: "Best if you want the community plus a more structured learning layer.",
-    extras: [
-      "Potential course directions include Python for AI Engineering.",
-      "Specification-Driven Development for AI.",
-      "Refactoring AI-generated code into cleaner systems.",
+    label: "Main + courses",
+    scope: "Includes the full recap experience and adds courses on top.",
+    description:
+      "Includes all Main access plus course access.",
+    bestFor: "Use this if you want the recap format and courses.",
+    features: [
+      "Everything in Main",
+      "Course access",
     ],
+    extras: courseIdeas,
+    disclaimer:
+      "These course ideas are examples, not fixed promises. The roadmap depends on member needs.",
+    cta: "Join Premium + courses",
   },
-]
-
-const faqHighlights = [
-  "Yes, system design topics like scalability and latency can be covered based on demand.",
-  "Frontend developers can transition by building with TypeScript first and adding Python gradually.",
-  "You do not need to look like an expert. Share real progress, decisions, and lessons learned.",
-  "Even one to two focused hours per week can be valuable with structure and accountability.",
-  "You do not need to match every bullet in job descriptions before applying.",
-  "Experienced engineers also benefit by reducing noise and focusing on what matters.",
 ]
 
 const focusRing =
@@ -189,8 +240,8 @@ export function EventRecapLandingPage() {
               </h1>
 
               <p className="mt-4 max-w-3xl text-base text-muted-foreground sm:text-lg">
-                If you missed the launch stream, this page gives you the key ideas, upcoming events,
-                membership options, and the fastest path to join.
+                This page summarizes the launch stream, the activity format, upcoming sessions, and
+                how the recap maps to the membership tiers.
               </p>
 
               <div className="mt-6 flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
@@ -204,16 +255,16 @@ export function EventRecapLandingPage() {
                 </span>
                 <span className="inline-flex items-center gap-1.5">
                   <Users className="h-4 w-4 text-accent" />
-                  Community-focused format
+                  Launch session
                 </span>
               </div>
 
               <div className="mt-8 flex flex-wrap gap-3">
                 <Link
-                  href="#plans"
+                  href="#watch-stream"
                   className={`inline-flex items-center gap-2 rounded-lg bg-accent px-5 py-2.5 text-sm font-semibold text-accent-foreground transition-colors hover:bg-accent/90 ${focusRing}`}
                 >
-                  Join AI Shipping Labs
+                  Watch the recording
                   <ArrowRight className="h-4 w-4" />
                 </Link>
                 <a
@@ -236,13 +287,12 @@ export function EventRecapLandingPage() {
                 </p>
                 <ul className="mt-3 flex flex-wrap gap-x-4 gap-y-2 text-sm">
                   {[
-                    { href: "#watch-stream", label: "Recording" },
                     { href: "#membership", label: "Highlights" },
                     { href: "#activities", label: "Activities" },
-                    { href: "#early-member-plan", label: "Early member plan" },
+                    { href: "#watch-stream", label: "Recording" },
                     { href: "#upcoming-events", label: "Live sessions" },
+                    { href: "#membership-map", label: "Plan fit" },
                     { href: "#plans", label: "Plans" },
-                    { href: "#faq-from-stream", label: "FAQ" },
                   ].map((item) => (
                     <li key={item.href}>
                       <a
@@ -262,14 +312,19 @@ export function EventRecapLandingPage() {
 
       <section
         id="watch-stream"
-        className="scroll-mt-28 px-6 pb-14 lg:px-8 lg:pb-20"
+        className="scroll-mt-28 border-t border-border px-6 py-14 lg:px-8 lg:py-20"
         aria-labelledby="watch-stream-heading"
       >
         <div className="mx-auto max-w-5xl">
           <div className="overflow-hidden rounded-2xl border border-border bg-card/30 p-4 sm:p-6">
-            <div id="watch-stream-heading" className="mb-4 flex items-center gap-2 text-sm font-medium text-accent">
-              <Video className="h-4 w-4 shrink-0" aria-hidden />
-              Watch the launch stream
+            <div className="mb-4">
+              <div id="watch-stream-heading" className="flex items-center gap-2 text-sm font-medium text-accent">
+                <Video className="h-4 w-4 shrink-0" aria-hidden />
+                Watch the launch stream
+              </div>
+              <p className="mt-2 text-sm text-muted-foreground">
+                Full recording of the launch session.
+              </p>
             </div>
             <div className="aspect-video w-full overflow-hidden rounded-xl border border-border bg-black shadow-lg shadow-black/40">
               <iframe
@@ -292,10 +347,13 @@ export function EventRecapLandingPage() {
       >
         <div className="mx-auto max-w-5xl">
           <div className="mb-8">
-            <p className="text-sm font-medium uppercase tracking-widest text-accent">Launch stream summary</p>
+            <p className="text-sm font-medium uppercase tracking-widest text-accent">Community overview</p>
             <h2 className="mt-3 text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">
-              What You Need to Know
+              Main points from the recap
             </h2>
+            <p className="mt-2 max-w-3xl text-sm text-muted-foreground sm:text-base">
+              The stream centered on three ideas: execution, learning by building, and collaboration.
+            </p>
           </div>
 
           <div className="grid gap-4 md:grid-cols-3">
@@ -324,11 +382,10 @@ export function EventRecapLandingPage() {
         <div className="mx-auto max-w-5xl">
           <div className="mb-8">
             <h2 className="text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">
-              Main Community Activities
+              Recurring formats inside the community
             </h2>
             <p className="mt-2 max-w-3xl text-sm text-muted-foreground sm:text-base">
-              This is the working format inside the community. It is built to help members ship projects,
-              get feedback, and keep momentum.
+              These are the ongoing formats described in the stream.
             </p>
           </div>
           <div className="grid gap-4 md:grid-cols-2">
@@ -353,101 +410,66 @@ export function EventRecapLandingPage() {
         </div>
       </section>
 
-      <section className="scroll-mt-28 border-t border-border px-6 py-14 lg:px-8 lg:py-20">
+      <section
+        id="activities"
+        className="scroll-mt-28 border-t border-border px-6 py-14 lg:px-8 lg:py-20"
+      >
         <div className="mx-auto max-w-5xl">
           <div className="mb-8">
-            <p className="text-sm font-medium uppercase tracking-widest text-accent">Early member value</p>
-            <h2 className="mt-3 text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">
-              Why Joining Early Matters
+            <h2 className="text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">
+              Early Member Benefit
             </h2>
-            <p className="mt-2 max-w-4xl text-sm leading-relaxed text-muted-foreground sm:text-base">
-              While the community is still small, we can give each member more direct attention. That
-              includes personal onboarding and a personalized plan you can use during upcoming
-              community sprints.
-            </p>
-          </div>
-
-          <div className="grid gap-4 md:grid-cols-3">
-            <article className="rounded-xl border border-accent/30 bg-accent/5 p-5 md:col-span-2">
-              <div className="inline-flex items-center gap-2 text-sm font-semibold text-accent">
-                <Target className="h-4 w-4" />
-                Personalized plan + sprint execution
-              </div>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                You are not just joining generic activities. You get a plan tailored to your goals and
-                situation, then apply it inside planned sprints with deadlines and stand-ups. This gives
-                you a clear direction and shared accountability from day one.
-              </p>
-              <div className="mt-5">
-                <p className="text-xs font-semibold uppercase tracking-[0.12em] text-accent/90">
-                  How it works
+            <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
+              <div className="max-w-3xl">
+                <div className="inline-flex items-center gap-2 text-sm font-semibold text-accent">
+                  <Target className="h-4 w-4" />
+                  Main and Premium currently include more direct onboarding
+                </div>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                  While the group is still small, onboarding can include a personalized plan used in
+                  sprints and check-ins.
                 </p>
-                <div className="mt-3 grid gap-3 sm:grid-cols-2">
-                  {earlyMemberPlanSteps.map((step, index) => (
-                    <article
-                      key={step}
-                      className="rounded-lg border border-accent/20 bg-background/60 p-3"
-                    >
-                      <div className="flex items-start gap-3">
-                        <span className="inline-flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-accent text-xs font-semibold text-accent-foreground">
-                          {index + 1}
-                        </span>
-                        <p className="text-sm leading-relaxed text-muted-foreground">{step}</p>
-                      </div>
-                    </article>
-                  ))}
-                </div>
-                <div className="mt-3 rounded-lg border border-accent/25 bg-accent/10 px-4 py-3 text-sm text-foreground/90">
-                  Outcome: a personalized plan you execute in sprints with clear milestones and support.
-                </div>
               </div>
-            </article>
-
-            <article
-              id="early-member-plan"
-              className="scroll-mt-28 rounded-xl border border-border bg-card/40 p-5"
-            >
-              <h3 className="text-base font-semibold text-foreground">This plan can focus on:</h3>
-              <ul className="mt-3 space-y-2">
-                {earlyMemberFocusAreas.map((item) => (
-                  <li key={item} className="flex items-start gap-2 text-sm text-muted-foreground">
-                    <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-accent" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-              <Link
-                href="#plans"
-                className={`mt-4 inline-flex items-center gap-2 text-sm font-semibold text-accent hover:underline ${focusRing}`}
-              >
-                More about membership plans
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-            </article>
-          </div>
-
-          <div className="mt-4 rounded-xl border border-border bg-card/40 p-5">
-            <p className="text-sm leading-relaxed text-muted-foreground">
-              This level of personal attention is available because the community is still small. As the
-              community grows, we may not be able to offer the same depth of one-to-one planning to
-              everyone.
-            </p>
-            <div className="mt-4 flex flex-wrap items-center gap-3">
-              <a
-                href={getPaymentLink("main", true)}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`inline-flex items-center gap-2 rounded-lg bg-accent px-4 py-2 text-sm font-semibold text-accent-foreground transition-colors hover:bg-accent/90 ${focusRing}`}
-              >
-                Join Main Tier
-                <ExternalLink className="h-4 w-4 opacity-90" aria-hidden />
-              </a>
               <a
                 href="mailto:team@aishippinglabs.com"
-                className={`inline-flex items-center gap-2 rounded-lg border border-border px-4 py-2 text-sm font-semibold text-foreground transition-colors hover:bg-secondary ${focusRing}`}
+                className={`inline-flex items-center gap-2 rounded-lg border border-border bg-background/80 px-4 py-2 text-sm font-semibold text-foreground transition-colors hover:bg-secondary ${focusRing}`}
               >
-                Ask about your plan
+                Ask a question
               </a>
+            </div>
+
+            <div className="mt-5 rounded-xl border border-accent/20 bg-background/70 p-5">
+              <h3 className="text-base font-semibold text-foreground">
+                Personalized plan + sprint execution
+              </h3>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                You get a plan tailored to your goals and current situation, then use it inside
+                planned sprints with deadlines and check-ins. The goal is to make the next steps
+                explicit from the start.
+              </p>
+
+              <p className="mt-5 text-xs font-semibold uppercase tracking-[0.12em] text-accent">
+                How it works
+              </p>
+              <div className="mt-3 grid gap-3 sm:grid-cols-2">
+                {onboardingPlanSteps.map((step, index) => (
+                  <article
+                    key={step}
+                    className="rounded-lg border border-accent/15 bg-card/40 p-4"
+                  >
+                    <div className="flex items-start gap-3">
+                      <span className="inline-flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-accent text-xs font-semibold text-accent-foreground">
+                        {index + 1}
+                      </span>
+                      <p className="text-sm leading-relaxed text-muted-foreground">{step}</p>
+                    </div>
+                  </article>
+                ))}
+              </div>
+
+              <div className="mt-3 rounded-lg border border-accent/20 bg-accent/10 px-4 py-3 text-sm text-foreground/90">
+                Outcome: a personalized plan used in sprints with milestones and support.
+              </div>
             </div>
           </div>
         </div>
@@ -461,8 +483,11 @@ export function EventRecapLandingPage() {
           <div className="mb-8">
             <p className="text-sm font-medium uppercase tracking-widest text-accent">Upcoming events</p>
             <h2 className="mt-3 text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">
-              Next Live Sessions
+              Next Live Building Sessions
             </h2>
+            <p className="mt-2 max-w-3xl text-sm text-muted-foreground sm:text-base">
+              Upcoming building sessions related to the format described in the stream.
+            </p>
           </div>
           <div className="grid gap-4 md:grid-cols-2">
             {upcomingEvents.map((event) => (
@@ -491,18 +516,91 @@ export function EventRecapLandingPage() {
         </div>
       </section>
 
+      <section
+        id="membership-map"
+        className="scroll-mt-28 border-t border-border px-6 py-14 lg:px-8 lg:py-20"
+      >
+        <div className="mx-auto max-w-5xl">
+          <div className="rounded-2xl border border-border bg-card/40 p-5 sm:p-6">
+            <div className="max-w-3xl">
+              <p className="text-sm font-medium uppercase tracking-widest text-accent">Membership context</p>
+              <h2 className="mt-3 text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">
+                How this recap maps to the tiers
+              </h2>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:text-base">
+                The recap describes the Main and Premium tiers. Basic is limited to written resources.
+              </p>
+            </div>
+
+            <div className="mt-6 overflow-x-auto">
+              <div className="min-w-[700px] rounded-xl border border-border bg-background/70">
+                <div className="grid grid-cols-[minmax(0,1.9fr)_repeat(3,minmax(92px,1fr))] gap-3 border-b border-border px-4 py-3 text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">
+                  <div>Included in this recap</div>
+                  {tierOrder.map((tier) => (
+                    <div key={tier} className="text-center">
+                      {tierLabels[tier]}
+                    </div>
+                  ))}
+                </div>
+
+                {recapCoverage.map((item) => (
+                  <div
+                    key={item.title}
+                    className="grid grid-cols-[minmax(0,1.9fr)_repeat(3,minmax(92px,1fr))] gap-3 border-b border-border/70 px-4 py-4 last:border-b-0"
+                  >
+                    <div>
+                      <h3 className="text-sm font-semibold text-foreground">{item.title}</h3>
+                      <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                        {item.description}
+                      </p>
+                    </div>
+                    {tierOrder.map((tier) => {
+                      const included = item.tiers.includes(tier)
+
+                      return (
+                        <div key={tier} className="flex items-center justify-center">
+                          <span
+                            className={`inline-flex min-w-20 items-center justify-center gap-2 rounded-full px-3 py-1.5 text-xs font-semibold ${
+                              included
+                                ? "bg-accent/12 text-accent"
+                                : "bg-muted/50 text-muted-foreground/70"
+                            }`}
+                          >
+                            {included ? (
+                              <>
+                                <Check className="h-3.5 w-3.5" />
+                                Included
+                              </>
+                            ) : (
+                              <>
+                                <X className="h-3.5 w-3.5" />
+                                No
+                              </>
+                            )}
+                          </span>
+                        </div>
+                      )
+                    })}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section id="plans" className="scroll-mt-28 border-t border-border px-6 py-14 lg:px-8 lg:py-20">
         <div className="mx-auto max-w-5xl">
           <div className="mb-8">
-            <p className="text-sm font-medium uppercase tracking-widest text-accent">Membership</p>
+            <p className="text-sm font-medium uppercase tracking-widest text-accent">Plans</p>
             <h2 className="mt-3 text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">
-              Pick the Right Level of Support
+              Membership plans
             </h2>
             <p className="mt-2 max-w-3xl text-sm text-muted-foreground sm:text-base">
-              Start with the level that matches how you learn best. You can always move up later as your
-              goals change.
+              These are the three plan types referenced by the recap.
             </p>
           </div>
+
           <div className="grid gap-4 md:grid-cols-3">
             {plans.map((plan) => (
               <article
@@ -510,15 +608,57 @@ export function EventRecapLandingPage() {
                 className={`flex h-full flex-col rounded-xl border p-5 ${
                   plan.name === "Main"
                     ? "border-accent/50 bg-accent/5 shadow-md shadow-accent/5 ring-1 ring-accent/20"
+                    : plan.name === "Premium"
+                      ? "border-foreground/20 bg-card/60 shadow-sm"
                     : "border-border bg-card/40"
                 }`}
               >
-                <div className="inline-flex w-fit rounded-full border border-border/70 bg-background/70 px-2.5 py-1 text-xs font-semibold text-accent">
+                <div
+                  className={`inline-flex w-fit rounded-full border px-2.5 py-1 text-xs font-semibold ${
+                    plan.name === "Basic"
+                      ? "border-border/70 bg-background/70 text-muted-foreground"
+                      : "border-accent/30 bg-accent/10 text-accent"
+                  }`}
+                >
                   {plan.label}
                 </div>
                 <h3 className="mt-3 text-lg font-semibold text-foreground">{plan.name}</h3>
+                <p
+                  className={`mt-2 text-sm ${
+                    plan.name === "Basic" ? "text-muted-foreground" : "text-accent"
+                  }`}
+                >
+                  {plan.scope}
+                </p>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{plan.description}</p>
                 <p className="mt-3 text-sm text-foreground/85">{plan.bestFor}</p>
+                <ul className="mt-4 space-y-2">
+                  {plan.features.map((item) => (
+                    <li key={item} className="flex items-start gap-2 text-sm text-muted-foreground">
+                      <span className="mt-0.5 inline-flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-accent/10 text-accent">
+                        <Check className="h-3 w-3" />
+                      </span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+                {plan.exclusions && (
+                  <div className="mt-4 rounded-lg border border-dashed border-border bg-background/60 p-3">
+                    <p className="text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">
+                      Not included here
+                    </p>
+                    <ul className="mt-2 space-y-2">
+                      {plan.exclusions.map((item) => (
+                        <li key={item} className="flex items-start gap-2 text-sm text-muted-foreground">
+                          <span className="mt-0.5 inline-flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-muted/60 text-muted-foreground">
+                            <X className="h-3 w-3" />
+                          </span>
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
                 {plan.extras && (
                   <ul className="mt-3 space-y-2">
                     {plan.extras.map((item) => (
@@ -529,6 +669,11 @@ export function EventRecapLandingPage() {
                     ))}
                   </ul>
                 )}
+                {plan.disclaimer && (
+                  <div className="mt-3 rounded-lg border border-accent/20 bg-accent/5 px-4 py-3 text-sm leading-relaxed text-muted-foreground">
+                    {plan.disclaimer}
+                  </div>
+                )}
                 <a
                   href={getPaymentLink(plan.stripeKey, true)}
                   target="_blank"
@@ -536,10 +681,12 @@ export function EventRecapLandingPage() {
                   className={`mt-auto inline-flex w-full items-center justify-center gap-2 rounded-lg px-4 py-2.5 text-sm font-semibold transition-colors sm:w-auto ${
                     plan.name === "Main"
                       ? `bg-accent text-accent-foreground hover:bg-accent/90 ${focusRing}`
+                      : plan.name === "Premium"
+                        ? `bg-foreground text-background hover:bg-foreground/90 ${focusRing}`
                       : `bg-secondary text-foreground hover:bg-secondary/80 ${focusRing}`
                   }`}
                 >
-                  Choose {plan.name}
+                  {plan.cta}
                   <ExternalLink className="h-4 w-4 opacity-90" aria-hidden />
                 </a>
               </article>
@@ -551,26 +698,28 @@ export function EventRecapLandingPage() {
       <section className="border-t border-border px-6 py-14 lg:px-8 lg:py-20">
         <div className="mx-auto max-w-4xl rounded-2xl border border-accent/30 bg-accent/5 p-8 text-center">
           <h3 className="text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">
-            Ready to Join?
+            Membership links
           </h3>
           <p className="mx-auto mt-3 max-w-3xl text-sm leading-relaxed text-muted-foreground sm:text-base">
-            Choose a plan and start building with a focused community that values execution over noise.
+            Use these links to view the tier mapping or open the Main plan directly.
           </p>
           <div className="mt-7 flex flex-wrap items-center justify-center gap-3">
             <Link
-              href="#plans"
+              href="#membership-map"
               className={`inline-flex items-center gap-2 rounded-lg bg-accent px-5 py-2.5 text-sm font-semibold text-accent-foreground transition-colors hover:bg-accent/90 ${focusRing}`}
             >
-              View plans
+              See how tiers map
               <ArrowRight className="h-4 w-4" />
             </Link>
-            <Link
-              href="#early-member-plan"
+            <a
+              href={getPaymentLink("main", true)}
+              target="_blank"
+              rel="noopener noreferrer"
               className={`inline-flex items-center gap-2 rounded-lg border border-border bg-background/40 px-5 py-2.5 text-sm font-semibold text-foreground transition-colors hover:bg-secondary ${focusRing}`}
             >
-              Early member onboarding
-              <ArrowRight className="h-4 w-4" />
-            </Link>
+              Join Main community
+              <ExternalLink className="h-4 w-4 opacity-90" aria-hidden />
+            </a>
             <a
               href="mailto:team@aishippinglabs.com"
               className={`inline-flex items-center gap-2 rounded-lg border border-border px-5 py-2.5 text-sm font-semibold text-foreground transition-colors hover:bg-secondary ${focusRing}`}

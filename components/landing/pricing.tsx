@@ -10,17 +10,16 @@ const tiers = [
   {
     name: "Basic",
     stripeKey: "basic" as StripeTier,
-    tagline: "Content only",
-    description: "Access curated educational content, tutorials, and research. Perfect for self-directed builders who learn at their own pace.",
+    tagline: "Written content only",
+    description: "Access written educational content for self-directed learning at your own pace. No community access is included in this tier.",
     priceMonthly: 20,
     priceAnnual: 200,
-    hook: "Educational content without community access.",
+    hook: "Written content only, with no community access.",
     features: [
-      { text: "Full access to exclusive Substack content", included: true },
-      { text: "Hands-on tutorials with code examples you can implement", included: true },
-      { text: "Curated breakdowns of new AI tools and workflows", included: true },
-      { text: "Behind-the-scenes access to ongoing research and experiments", included: true },
-      { text: "Curated collection of valuable social posts you might have missed", included: true }
+      { text: "Exclusive Substack content", included: true },
+      { text: "Hands-on tutorials with practical code examples", included: true },
+      { text: "Trend breakdowns from an engineering perspective", included: true },
+      { text: "Curated collection of high-signal social posts", included: true }
     ],
     positioning: "Best for independent builders who prefer self-paced learning. Upgrade to Main for structure, accountability, and community support.",
     highlighted: false,
@@ -28,41 +27,34 @@ const tiers = [
   {
     name: "Main",
     stripeKey: "main" as StripeTier,
-    tagline: "Live learning + community",
-    description: "Everything in Basic, plus the structure, accountability, and peer support to ship your AI projects consistently.",
+    tagline: "Community access + live learning",
+    description: "Everything in Basic, plus full community access, structure, accountability, and peer support to ship your AI projects consistently.",
     priceMonthly: 50,
     priceAnnual: 500,
-    hook: "Build with the community and get the accountability and direction you need to make progress.",
+    hook: "Build with the community through live activities, without course access.",
     features: [
       { text: "Everything in Basic", included: true },
-      { text: "Closed community access to connect and interact with practitioners", included: true },
-      { text: "Collaborative problem-solving and mentorship for implementation challenges", included: true },
-      { text: "Interactive group coding sessions led by a host", included: true },
-      { text: "Guided project-based learning with curated resources", included: true },
-      { text: "Community hackathons", included: true },
-      { text: "Career advancement discussions and feedback", included: true },
-      { text: "Personal brand development guidance and content", included: true },
-      { text: "Developer productivity tips and workflows", included: true },
-      { text: "Propose and vote on future topics", included: true },
+      { text: "Accountability circles with sprint goals and regular live check-ins", included: true },
+      { text: "Group learning through member-led research and shared practical takeaways", included: true },
+      { text: "Building sessions with live host-led work on real implementation questions", included: true },
+      { text: "Trend breakdowns from an engineering perspective with pointers to code and source material", included: true },
+      { text: "Career support on interviews, offers, salary questions, LinkedIn, GitHub, and project positioning", included: true },
     ],
-    positioning: "Best for builders who need structure and accountability to turn project ideas into reality alongside motivated peers.",
+    positioning: "Best for builders who want community access, structure, and accountability. Choose Premium if you also want access to mini-courses.",
     highlighted: true,
   },
   {
     name: "Premium",
     stripeKey: "premium" as StripeTier,
-    tagline: "Courses + personalized feedback",
-    description: "Everything in Main, plus structured learning paths through mini-courses and personalized career guidance to accelerate your growth.",
+    tagline: "Community access + courses",
+    description: "Everything in Main, including community access, plus mini-courses and personalized career guidance to accelerate your growth.",
     priceMonthly: 100,
     priceAnnual: 1000,
-    hook: "Accelerate your growth with structured courses and personalized feedback.",
+    hook: "Get community access plus course access for a more structured learning path.",
     features: [
       { text: "Everything in Main", included: true },
-      { text: "Access to all mini-courses on specialized topics", included: true },
-      { text: "Collection regularly updated with new courses", included: true },
-      { text: "Upcoming: Python for Data and AI Engineering", included: true },
-      { text: "Propose and vote on mini-course topics", included: true },
-      { text: "Resume, LinkedIn, and GitHub teardowns", included: true },
+      { text: "Access to all mini-courses on specialized topics, with a regularly updated collection (including Python for Data and AI Engineering)", included: true },
+      { text: "Personalized career guidance and feedback", included: true },
     ],
     positioning: "Best for builders seeking structured learning paths to complement hands-on projects, plus personalized career guidance.",
     highlighted: false,
@@ -111,7 +103,32 @@ export function Pricing() {
           </div>
         </div>
 
-        <div className="mx-auto mt-16 grid max-w-7xl gap-6 lg:grid-cols-3">
+        <div className="mx-auto mt-10 max-w-4xl rounded-2xl border border-accent/40 bg-accent/10 p-5 sm:p-6">
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <p className="flex items-center gap-1.5 text-sm font-semibold uppercase tracking-wide text-accent">
+                <Star className="h-4 w-4" />
+                Limited Time
+              </p>
+              <p className="mt-1 text-sm font-medium text-foreground">
+                Personal action plan included in Main and Premium
+              </p>
+              <p className="mt-1 text-sm text-muted-foreground">
+                Get clear priorities for what to build and learn next. Available for early members only.
+              </p>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="inline-flex rounded-full border border-accent/50 bg-background px-3 py-1 text-xs font-medium text-accent">
+                Main
+              </span>
+              <span className="inline-flex rounded-full border border-accent/50 bg-background px-3 py-1 text-xs font-medium text-accent">
+                Premium
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div className="mx-auto mt-12 grid max-w-7xl gap-6 lg:grid-cols-3">
           {tiers.map((tier) => (
             <div
               key={tier.name}
@@ -168,6 +185,14 @@ export function Pricing() {
                     </span>
                   </li>
                 ))}
+                {(tier.name === "Main" || tier.name === "Premium") && (
+                  <li className="mt-4 flex items-start gap-3 rounded-lg border border-accent/30 bg-accent/5 p-3">
+                    <Star className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
+                    <span className="text-sm font-medium text-accent">
+                      Personal action plan included (limited time)
+                    </span>
+                  </li>
+                )}
               </ul>
 
               <div className="mt-auto space-y-4">
