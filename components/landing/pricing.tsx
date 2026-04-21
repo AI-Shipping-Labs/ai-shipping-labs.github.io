@@ -206,7 +206,15 @@ export function Pricing() {
                       : "bg-secondary text-foreground hover:bg-secondary/80"
                   )}
                 >
-                  <a href={getPaymentLink(tier.stripeKey, annual)} target="_blank" rel="noopener noreferrer">
+                  <a
+                    href={getPaymentLink(tier.stripeKey, annual)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    data-gtm-event="begin_checkout"
+                    data-gtm-plan={tier.stripeKey}
+                    data-gtm-billing={annual ? "annual" : "monthly"}
+                    data-gtm-location="main_page_tiers"
+                  >
                     {tier.highlighted ? "Get Started" : `Choose ${tier.name}`}
                   </a>
                 </Button>

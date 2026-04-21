@@ -1,3 +1,6 @@
+ "use client"
+
+import { useState } from "react"
 import Link from "next/link"
 import {
   ArrowRight,
@@ -166,6 +169,8 @@ const plans = [
   {
     name: "Basic",
     stripeKey: "basic" as StripeTier,
+    priceMonthly: 20,
+    priceAnnual: 200,
     label: "Written resources only",
     scope: "Written resources only.",
     description:
@@ -186,6 +191,8 @@ const plans = [
   {
     name: "Main",
     stripeKey: "main" as StripeTier,
+    priceMonthly: 50,
+    priceAnnual: 500,
     label: "Community access",
     scope: "Covers the formats described in this recap.",
     description:
@@ -201,6 +208,8 @@ const plans = [
   {
     name: "Premium",
     stripeKey: "premium" as StripeTier,
+    priceMonthly: 100,
+    priceAnnual: 1000,
     label: "Main + courses",
     scope: "Includes the full recap experience and adds courses on top.",
     description:
@@ -221,6 +230,8 @@ const focusRing =
   "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
 
 export function EventRecapLandingPage() {
+  const [annual, setAnnual] = useState(true)
+
   return (
     <main className="min-h-screen bg-background">
       <Header />
@@ -599,6 +610,26 @@ export function EventRecapLandingPage() {
             <p className="mt-2 max-w-3xl text-sm text-muted-foreground sm:text-base">
               These are the three plan types referenced by the recap.
             </p>
+            <div className="mt-5 inline-flex items-center gap-3 rounded-lg border border-border bg-card/40 px-4 py-2">
+              <span className={`text-sm ${!annual ? "text-foreground" : "text-muted-foreground"}`}>Monthly</span>
+              <button
+                type="button"
+                onClick={() => setAnnual(!annual)}
+                className={`relative inline-flex h-6 w-11 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors ${
+                  annual ? "bg-accent" : "bg-secondary"
+                }`}
+                aria-label="Toggle annual pricing"
+              >
+                <span
+                  className={`pointer-events-none inline-block h-5 w-5 transform rounded-full bg-foreground shadow ring-0 transition-transform ${
+                    annual ? "translate-x-5" : "translate-x-0"
+                  }`}
+                />
+              </button>
+              <span className={`text-sm ${annual ? "text-foreground" : "text-muted-foreground"}`}>
+                Annual
+              </span>
+            </div>
           </div>
 
           <div className="grid gap-4 md:grid-cols-3">
@@ -623,8 +654,16 @@ export function EventRecapLandingPage() {
                   {plan.label}
                 </div>
                 <h3 className="mt-3 text-lg font-semibold text-foreground">{plan.name}</h3>
+                <div className="mt-3 flex items-baseline gap-2">
+                  <span className="text-3xl font-semibold text-foreground">
+                    €{annual ? plan.priceAnnual : plan.priceMonthly}
+                  </span>
+                  <span className="text-sm text-muted-foreground">
+                    /{annual ? "year" : "month"}
+                  </span>
+                </div>
                 <p
-                  className={`mt-2 text-sm ${
+                  className={`mt-3 text-sm ${
                     plan.name === "Basic" ? "text-muted-foreground" : "text-accent"
                   }`}
                 >
@@ -675,9 +714,13 @@ export function EventRecapLandingPage() {
                   </div>
                 )}
                 <a
-                  href={getPaymentLink(plan.stripeKey, true)}
+                  href={getPaymentLink(plan.stripeKey, annual)}
                   target="_blank"
                   rel="noopener noreferrer"
+                  data-gtm-event="begin_checkout"
+                  data-gtm-plan={plan.stripeKey}
+                  data-gtm-billing={annual ? "annual" : "monthly"}
+                  data-gtm-location="launch_recap_page"
                   className={`mt-auto inline-flex w-full items-center justify-center gap-2 rounded-lg px-4 py-2.5 text-sm font-semibold transition-colors sm:w-auto ${
                     plan.name === "Main"
                       ? `bg-accent text-accent-foreground hover:bg-accent/90 ${focusRing}`
@@ -712,9 +755,13 @@ export function EventRecapLandingPage() {
               <ArrowRight className="h-4 w-4" />
             </Link>
             <a
-              href={getPaymentLink("main", true)}
+              href={getPaymentLink("main", annual)}
               target="_blank"
               rel="noopener noreferrer"
+              data-gtm-event="begin_checkout"
+              data-gtm-plan="main"
+              data-gtm-billing={annual ? "annual" : "monthly"}
+              data-gtm-location="launch_recap_page"
               className={`inline-flex items-center gap-2 rounded-lg border border-border bg-background/40 px-5 py-2.5 text-sm font-semibold text-foreground transition-colors hover:bg-secondary ${focusRing}`}
             >
               Join Main community
